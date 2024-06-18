@@ -7,13 +7,9 @@
     "context": "..",
     "args": {
       "COMPOSE_PROJ_NAME": "tsqa_pipeline_v2",
-      "KIND": "3.11"
+      "KIND": "3.10"
     }
   },
-  "mounts": [
-    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached",
-    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
-  ],
   "remoteUser": "root", // More info: https://aka.ms/dev-containers-non-root
   "customizations": {
     "vscode": {

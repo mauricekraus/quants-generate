@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:1.2
-ARG KIND=3.11
-FROM mkrausio/ml_research:torch-v2.3.0-${KIND}-cuda-11.8.0
+ARG KIND=3.10
+FROM mkrausio/ml_research:torch-v2.0.1-3.10-cuda-11.8.0
 
 ARG COMPOSE_PROJ_NAME="tsqa_pipeline_v2"
 
@@ -20,7 +20,7 @@ COPY lightning_requirements.txt .
 
 RUN \
   python -m pip install --upgrade pip && \
-  pip install "torch==2.3.0" -r requirements.txt  
+  pip install "torch==2.0.1" -r requirements.txt  
 
 RUN \
   pip install -r lightning_requirements.txt || echo "pip resolved failed lightning_requirements.txt, but seems to be fine"
