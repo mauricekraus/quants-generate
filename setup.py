@@ -1,4 +1,4 @@
-"""Python setup.py for project_name package"""
+"""Python setup.py for tsqa_pipeline_v2 package"""
 import io
 import os
 from setuptools import find_packages, setup
@@ -6,7 +6,7 @@ from setuptools import find_packages, setup
 
 def read(*paths, **kwargs):
     """Read the contents of a text file safely.
-    >>> read("project_name", "VERSION")
+    >>> read("tsqa_pipeline_v2", "VERSION")
     '0.1.0'
     >>> read("README.md")
     ...
@@ -30,16 +30,16 @@ def read_requirements(path):
 
 
 setup(
-    name="project_name",
-    version=read("project_name", "VERSION"),
-    description="project_description",
-    url="https://github.com/author_name/project_urlname/",
+    name="tsqa_pipeline_v2",
+    version=read("tsqa_pipeline_v2", "VERSION"),
+    description="Awesome tsqa_pipeline_v2 created by mauricekraus",
+    url="https://github.com/mauricekraus/tsqa-pipeline-v2/",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
-    author="author_name",
+    author="mauricekraus",
     packages=find_packages(exclude=[".docker", ".devcontainer", ".github"]),
     install_requires=read_requirements(
         ["requirements.txt", "lightning-requirements.txt"]
     ),
-    entry_points={"console_scripts": ["project_name = project_name.__main__:main"]},
+    entry_points={"console_scripts": ["tsqa_pipeline_v2 = tsqa_pipeline_v2.__main__:main"]},
 )

@@ -1,5 +1,5 @@
 services:
-  project_name:
+  tsqa_pipeline_v2:
     build:
       args:
         - COMPOSE_PROJ_NAME=${COMPOSE_PROJ_NAME}

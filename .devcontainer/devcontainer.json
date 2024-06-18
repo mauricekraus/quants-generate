@@ -1,12 +1,12 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-  "name": "project_name",
+  "name": "tsqa_pipeline_v2",
   "build": {
     "dockerfile": "../.docker/Dockerfile",
     "context": "..",
     "args": {
-      "COMPOSE_PROJ_NAME": "project_name",
+      "COMPOSE_PROJ_NAME": "tsqa_pipeline_v2",
       "KIND": "3.11"
     }
   },
