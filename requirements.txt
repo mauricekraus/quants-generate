@@ -1,0 +1,27 @@
+numpy
+matplotlib
+seaborn
+plotly
+darts
+
+rich
+pyrootutils
+python-dotenv
+black
+
+pynvim
+debugpy
+git+https://github.com/mauricekraus/rtpt@callbacks
+
+einops
+
+# jupyter
+ipykernel
+jupyter
+ipywidgets
+scikit-learn
+captum
+aim==3.18.1
+torchmetrics
+optuna
+optuna-dashboard

@@ -1,0 +1,15 @@
+services:
+  project_name:
+    build:
+      args:
+        - COMPOSE_PROJ_NAME=${COMPOSE_PROJ_NAME}
+        - KIND=3.11
+      context: ..
+      dockerfile: ./.docker/Dockerfile
+    environment:
+      - TMUX=$TMUX
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ..:/workspaces/${COMPOSE_PROJ_NAME}
