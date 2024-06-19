@@ -1,3 +1,22 @@
+# Important for TSQA
+
+`python app.py` starts the gradio gui
+
+`python generate.py timeline=xxxx` headless generates aninmations
+
+Example timelines are given in `./timelines`
+
+The output of generate.py is in here: `pretrained_models/mdm-smpl_clip_smplrifke_humanml3d/generations`
+
+
+
+
+
+
+
+
+
+
 <div align="center">
 
 # STMC: Spatio-Temporal Motion Collage
