@@ -70,9 +70,18 @@ def fix_fps(base_folder, new_base_folder, new_fps, force_redo=False):
         if "humanact12" in motion_path:
             continue
 
-        data = {x: y for x, y in np.load(motion_path).items()}
 
-        old_fps = float(data["mocap_framerate"])
+        data = {x: y for x, y in np.load(motion_path, allow_pickle=True).items()}
+
+        if not ("mocap_frame_rate" in data or "mocap_framerate" in data):
+            print(f"Skipping {motion_path} as it does not have a frame rate")
+            continue
+
+        if "mocap_frame_rate" in data:
+            # fix for GRAB
+            old_fps = float(data["mocap_frame_rate"])
+        else:
+            old_fps = float(data["mocap_framerate"])
 
         # process sequences
         poses = torch.from_numpy(data["poses"]).to(torch.float)
