@@ -191,3 +191,6 @@ websockets==11.0.3
 yapf==0.40.2
 yarl==1.9.2
 zipp==3.17.0
+
+
+chumpy @ git+https://github.com/mauricekraus/chumpy.git 
