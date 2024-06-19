@@ -7,7 +7,7 @@ ARG COMPOSE_PROJ_NAME="tsqa_pipeline_v2"
 ENV PROJECT_NAME=${COMPOSE_PROJ_NAME}
 RUN echo ${COMPOSE_PROJ_NAME}/$PROJECT_NAME
 
-RUN apt update -y && apt upgrade -y && apt install unzip
+RUN apt update -y && apt upgrade -y && apt install unzip ffmpeg libegl1 -y
 
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
   apt-get install -y git-lfs
@@ -16,14 +16,11 @@ RUN mkdir -p workspaces/$PROJECT_NAME
 WORKDIR /workspaces/$PROJECT_NAME
 
 COPY requirements.txt .
-COPY lightning_requirements.txt .
 
 RUN \
   python -m pip install --upgrade pip && \
   pip install "torch==2.0.1" -r requirements.txt  
 
-RUN \
-  pip install -r lightning_requirements.txt || echo "pip resolved failed lightning_requirements.txt, but seems to be fine"
 
 ENV PYTHONPATH=$PYTHONPATH:src
 
