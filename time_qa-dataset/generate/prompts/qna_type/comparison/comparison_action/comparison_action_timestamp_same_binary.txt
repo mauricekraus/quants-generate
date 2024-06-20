@@ -1,0 +1,18 @@
+Is the action at {time_1} the same as the action at {time_2}?
+Is the action at {time_1} not different from the action at {time_2}?
+Are the actions at {time_1} the same as the actions at {time_2}?
+Is the action at {time_1} equivalent to the action at {time_2}?
+Is there no disparity between the actions at {time_1} and {time_2}?
+Are the actions at {time_1} and {time_2} the same?
+Is the action at {time_1} identical to the action at {time_2}?
+Is there no discrepancy in the actions between {time_1} and {time_2}?
+Are the actions at {time_1} and {time_2} equivalent to each other?
+Are the activities at {time_1} and {time_2} identical?
+Do the actions at {time_1} and {time_2} exhibit similarity?
+Is the action at {time_1} no different from the action at {time_2}?
+Are the actions at {time_1} and {time_2} characterized by similarity?
+Is the action at {time_1} equal to the action at {time_2}?
+Are the actions at {time_1} and {time_2} alike?
+Is there no notable distinction between the actions at {time_1} and {time_2}?
+Are the actions at {time_1} and {time_2} identical to each other?
+Are the actions at {time_1} and {time_2} essentially the same thing?

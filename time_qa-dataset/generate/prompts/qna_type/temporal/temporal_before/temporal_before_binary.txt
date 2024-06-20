@@ -1,0 +1,23 @@
+A person was {activity_1}. Was it {activity_2} at any time before?
+A person was {activity_1}. Did {activity_2} occur some time before that?
+At a certain point in the sequence, the person is {activity_1}. Is {activity_2} observed some time before that?
+Did the person engage in {activity_2} some time before {activity_1}?
+Did the person engage in {activity_2} at some point prior to {activity_1}?
+Before being involved in {activity_1}, did the person transition to {activity_2} at an earlier point?
+Was {activity_2} observed as some previous action before the person was {activity_1}?
+Before being {activity_1}, did the person perform {activity_2}?
+Did the person display {activity_2} some time before their involvement in {activity_1}?
+Did the person display {activity_2} some time prior to their involvement in {activity_1}?
+Before {activity_1}, did the person do {activity_2} at an earlier stage?
+At some point before the initial instance of {activity_1}, did the person participate in {activity_2}?
+Was {activity_2} observed as a previous action to the person's prior {activity_1}?
+Did the person do {activity_2} some time before {activity_1}?
+Did {activity_2} precede {activity_1} at some point?
+Before {activity_1}, did the person engage in {activity_2} at some point?
+Was {activity_2} one of the previous actions for the person before {activity_1}?
+Did the person engage in {activity_2} at some point before {activity_1}?
+Did {activity_2} come some time before {activity_1} for the person?
+Was {activity_2} observed as a previous action for the person before {activity_1}?
+Before {activity_1}, did the person perform {activity_2} at some point?
+Did the person proceed to {activity_2} at some point before {activity_1}?
+Did {activity_2} happen some time before {activity_1} for the person?

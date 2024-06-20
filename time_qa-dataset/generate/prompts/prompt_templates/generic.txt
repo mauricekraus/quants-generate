@@ -1,0 +1,9 @@
+The person is {activity}
+Someone is {activity}
+We see the person engaging in {activity}
+The subject is {activity}
+The person is engaging in {activity}
+The person is performing {activity}
+The activity {activity} can be observed
+The movement is {activity}
+The activity is {activity}

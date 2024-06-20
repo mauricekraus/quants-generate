@@ -1,0 +1,4 @@
+# Example question: Which activity did the person perform as the last action? Was it A: hopping, B: shuffling, or C: moving the hands?
+
+The correct answer is: {solution}.
+The correct answer is {solution}.

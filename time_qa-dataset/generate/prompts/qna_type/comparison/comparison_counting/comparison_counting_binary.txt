@@ -1,0 +1,19 @@
+Is the person {activity_1} as many times as they are {activity_2}?
+Does the individual engage in {activity_1} an equal number of times as {activity_2}?
+Is the frequency of the person {activity_1} the same as that of {activity_2}?
+Are {activity_1} and {activity_2} equally prevalent in the person's actions?
+Is the person involved in {activity_1} as frequently as {activity_2}?
+Is there an equal occurrence of {activity_1} and {activity_2} for the person?
+Is the person engaged in {activity_1} and {activity_2} with equal frequency?
+Does the person do {activity_1} as much as {activity_2}?
+Is it true that the person does {activity_1} as often as {activity_2}?
+Are the person's actions of {activity_1} and {activity_2} the same in frequency?
+Does the person engage in {activity_1} as much as {activity_2}?
+Are {activity_1} and {activity_2} equally done by the person?
+Is there an equal number of times the person does {activity_1} and {activity_2}?
+Do the person's actions of {activity_1} and {activity_2} occur equally?
+Are the person's {activity_1} and {activity_2} activities the same in frequency?
+Is the person's involvement in {activity_1} the same as in {activity_2}?
+Do {activity_1} and {activity_2} happen an equal number of times for the person?
+Do {activity_1} and {activity_2} happen with the same frequency for the person?
+Does the person perform {activity_1} and {activity_2} the same number of times?

@@ -1,0 +1,35 @@
+A person was {activity_1}. Were they {activity_2} directly before that?
+At a certain point in the sequence, is {activity_2} followed directly by {activity_1}?
+At a certain point, does {activity_2} immediately precede {activity_1}?
+Directly before engaging in {activity_1}, does the person perform {activity_2}?
+Did the person start {activity_2} right before being involved in {activity_1}?
+Directly before performing {activity_1} at a particular time, does the person engage in {activity_2}?
+Directly prior to performing {activity_1} at a particular time, does the person engage in {activity_2}?
+Is {activity_2} the action that directly precedes {activity_1} for the person?
+Right before {activity_1}, does the person perform {activity_2}?
+Did the person engage in {activity_2} directly before starting to {activity_1}?
+Immediately before {activity_1}, does the person do {activity_2}?
+Is {activity_2} observed as the directly preceding action to the person's {activity_1}?
+Did the person do {activity_2} right before {activity_1}?
+Does {activity_2} directly precede {activity_1}?
+Right before {activity_1}, is the person {activity_2}?
+Is {activity_2} the previous action before {activity_1} for the person?
+Does the person perform {activity_2} directly before {activity_1}?
+Is {activity_2} observed as the action right before {activity_1}?
+Directly before {activity_1}, does the person engage in {activity_2}?
+Did the person undertake {activity_2} right before performing {activity_1}?
+Is {activity_2} observed as the preceding action before {activity_1}?
+Was the person {activity_2} right before {activity_1}?
+Does {activity_2} happen directly before {activity_1} for the person?
+At a certain point in time, does {activity_2} precede {activity_1} promptly?
+Promptly before engaging in {activity_1}, does the person perform {activity_2}?
+Is the person {activity_2} immediately before being involved in {activity_1}?
+Immediately prior to performing {activity_1}, does the person do {activity_2}?
+Immediately before {activity_1}, does the person engage in {activity_2}?
+Is {activity_2} the immediately preceding action to {activity_1} for the person?
+Directly before {activity_1}, does the person engage in {activity_2}?
+Did the person do {activity_2} immediately before engaging in {activity_1}?
+Directly before {activity_1}, does the person perform {activity_2}?
+Is {activity_2} observed as the immediate action before the person was {activity_1}?
+Does the person engage in {activity_2} directly before {activity_1}?
+Does {activity_2} occur immediately before {activity_1}?

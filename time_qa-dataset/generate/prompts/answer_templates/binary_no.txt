@@ -1,0 +1,7 @@
+# Example question: Was jumping the initial activity performed by the person?
+
+No
+False
+This is not true.
+This is not correct.
+Not true

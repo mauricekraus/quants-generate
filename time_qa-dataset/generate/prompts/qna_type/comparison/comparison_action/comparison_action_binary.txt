@@ -1,0 +1,18 @@
+Is the person doing the same action before {activity} as it is after {activity}?
+Is the person doing the same thing before as they are doing after {activity}?
+Are the actions performed by the person prior to and subsequent to {activity} equivalent?
+Can it be said that the person's actions before and after {activity} are the same?
+Can we observe a similarity in the person's behavior both prior to and following them {activity}?
+Does the person do the same thing before and after they {activity}?
+Is the person performing the identical action before and after {activity}?
+Do the person's actions stay the same before and after they are {activity}?
+Are the person's actions consistent prior to and following them {activity}?
+Does the person engage in the same behavior before and after experiencing {activity}?
+Is the person doing the exact same thing both before and after they are {activity}?
+Are the actions performed by the person similar before and after they perform {activity}?
+Can we observe consistency in the person's actions before and after they are {activity}?
+Does the person exhibit the same behavior before and after their involvement with {activity}?
+Can it be said that the person's actions prior to {activity} mirror their actions after {activity}?
+Are the person's actions consistent both preceding and following their first experience with {activity}?
+Does the person perform the same action both before and after they are {activity}?
+Are the person's actions identical both before and subsequent to {activity}?

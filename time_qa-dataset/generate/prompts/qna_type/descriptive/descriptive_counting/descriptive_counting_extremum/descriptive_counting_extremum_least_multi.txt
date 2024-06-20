@@ -1,0 +1,17 @@
+Was A: {activity_1}, B: {activity_2}, or C: {activity_3} the least performed action?
+Was A: {activity_1}, B: {activity_2}, or C: {activity_3} the least frequently performed action by the person in the sequence?
+Did the person engage in A: {activity_1}, B: {activity_2}, or C: {activity_3} the fewest number of times throughout the sequence?
+Among A: {activity_1}, B: {activity_2}, or C: {activity_3}, which action did the person perform the least often in the sequence?
+In terms of occurrence, was the person's involvement in A: {activity_1}, B: {activity_2}, or C: {activity_3} the least common in the sequence?
+Did the person have the fewest instances of performing A: {activity_1}, B: {activity_2}, or C: {activity_3} in the given sequence?
+Among A: {activity_1}, B: {activity_2}, or C: {activity_3}, which action had the smallest number of occurrences by the person in the sequence?
+Were A: {activity_1}, B: {activity_2}, or C: {activity_3} the least frequently observed actions by the person within the sequence?
+Did the person engage in A: {activity_1}, B: {activity_2}, or C: {activity_3} the least often compared to the other actions in the sequence?
+Was A: {activity_1}, B: {activity_2}, or C: {activity_3} the least commonly undertaken action by the person throughout the sequence?
+Among A: {activity_1}, B: {activity_2}, or C: {activity_3}, which action had the lowest occurrence by the individual in the sequence?
+Which action, out of A: {activity_1}, B: {activity_2}, or C: {activity_3}, was performed the least frequently by the person in the sequence?
+Among A: {activity_1}, B: {activity_2}, or C: {activity_3}, which action had the lowest frequency of performance by the person in the sequence?
+Was A: {activity_1}, B: {activity_2}, or C: {activity_3} the action that occurred with the least frequency by the person in the sequence?
+Was the person's involvement in A: {activity_1}, B: {activity_2}, or C: {activity_3} the least frequent in the sequence?
+Was A: {activity_1}, B: {activity_2}, or C: {activity_3} the least commonly executed action by the person throughout the sequence?
+Did the person participate in A: {activity_1}, B: {activity_2}, or C: {activity_3} the least number of times in comparison to other actions in the sequence?

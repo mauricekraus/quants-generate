@@ -1,0 +1,9 @@
+As the first action, the person is {activity}
+The person is starting the sequence with {activity}
+The person is starting off the sequence with {activity}
+First, the person is {activity}
+The first activity the person is doing is {activity}
+The sequence starts with {activity}
+The person initiates their actions with {activity}
+The activity {activity} is the first action done by the person
+{Activity} is the last action performed by the person

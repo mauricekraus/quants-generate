@@ -1,0 +1,6 @@
+# Example question: What happened right before the person was putting on a jacket?
+
+The person is {activity}.
+Someone is {activity}.
+We see someone who is {activity}.
+The subject is {activity}.

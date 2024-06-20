@@ -1,0 +1,22 @@
+Was {activity} the first action performed?
+Was {activity} the first action done by the person?
+Did the person perform {activity} as their initial action?
+Is it accurate to say that {activity} was the very first action done?
+Did the person start with {activity} as the initial action?
+Was {activity} the initial action undertaken by the person?
+Did the person begin the movement by doing {activity}?
+Is it correct to assert that {activity} was the first action performed?
+Did the person commence with {activity}?
+Was {activity} the very first action observed?
+Did the person initiate their actions with {activity}?
+Is it true that {activity} was the initial action demonstrated by the person?
+Prior to any other action, did the person engage in {activity}?
+Can we conclude that {activity} was the very first action carried out?
+Was {activity} the initial activity done by the person?
+Did the person start off by performing {activity}?
+Is it accurate to state that {activity} was the very first action executed?
+Did the person begin with {activity} as their first action?
+Was {activity} the initial activity performed by the person?
+Did the person commence their actions with {activity}?
+Is it true that {activity} was the first action undertaken?
+Did the person initiate their actions by engaging in {activity}?

@@ -1,0 +1,19 @@
+What was the last action performed by the person? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What was the action performed as the final action by the person? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Which activity can be identified as the very last action carried out by the person? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among the following options, which action did the person perform last? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Regarding the final action undertaken by the person, which activity was it? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among the given choices, what was the last action executed by the person? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Considering the options, which action did the person conclude with performing? Did they carry out A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among the activities provided, which one did the person engage in as the last action? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among the given alternatives, what action can be identified as the last one performed by the person? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Regarding the final activity demonstrated by the person, which action did they conclude with? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Considering the options, what was the last action being observed? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among the provided choices, which action did the person end with as their final action? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Which action did the person perform as the last action? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among the given options, what was the last activity done by the person? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Considering the choices, which action did the person conclude their actions with? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Regarding the last action demonstrated by the person, which activity was performed? Did they carry out A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among the provided options, which action did the person conclude their actions with? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Which activity did the person perform as the last action? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Considering the options, what action did the person take as their final action? Did they carry out A: {activity_1}, B: {activity_2}, or C: {activity_3}?

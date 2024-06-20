@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "generate_tsqa"
+version = "0.1.0"
+authors = [
+  { name = "Various" },
+]
+description = "Generation code for the dataset."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Natural Language :: English",
+  "License :: OSI Approved :: MIT License",
+]
+urls = { Homepage = "https://github.com/felixdivo/time_qa-dataset" }
+dependencies = [
+    "rich",
+    "numpy",
+    "matplotlib",
+    "typer",
+    "datasets",
+    "lightning",
+]
+
+# The package is discovered automatically (including the py.typed file):
+# https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#flat-layout
+[tool.setuptools.packages.find]
+where = ["generate"]
+
+[project.optional-dependencies]
+dev = [
+  "black~=23.1",
+  "ruff",
+  "mypy",
+  "tables",
+  "ipykernel",
+  "plotly",
+  "nbformat",
+  "huggingface_hub[cli]",
+]
+
+[tool.ruff]
+line-length = 110
+# The lowest supported version
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP"]
+
+[tool.mypy]
+warn_return_any = true
+warn_unused_configs = true

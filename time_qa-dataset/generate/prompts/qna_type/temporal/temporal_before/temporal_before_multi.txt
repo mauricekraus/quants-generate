@@ -1,0 +1,25 @@
+A person was {activity}. What happened in the sequence some time before that? A: {activity_1}, B: {activity_2} or C: {activity_3}?
+Some time before a person was {activity}, was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Prior to {activity}, what actions did the person perform at some point? A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What did the person do some time before {activity}? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Some time before someone was {activity}, did they engage in A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Which actions were done some time before someone became {activity}? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What did the person engage in before {activity}? Did they participate in A: {activity_1}, B: {activity_2}, or C: {activity_3} at some point?
+Before the person was {activity}, did they previously engage in A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Before engaging in {activity}, what occurred? Did the person perform A: {activity_1}, B: {activity_2}, or C: {activity_3} at some point?
+What actions took place some time prior to someone being involved in {activity}? Did they carry out A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Some time before the person performed {activity}, what happened? Did they engage in A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What did the person do before engaging in {activity}? Did they proceed to A: {activity_1}, B: {activity_2}, or C: {activity_3} at some point?
+Any time prior to the individual starting {activity}, what occurred? Did they undertake A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Before the person's involvement in {activity}, what actions were performed? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What activities took place before the person got involved in {activity}? Did they engage in A: {activity_1}, B: {activity_2}, or C: {activity_3} at some point?
+Some time before performing {activity}, what did the person do? Did they engage in A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What happened prior to the person {activity}? Did they do A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What actions were observed some time before the person was {activity}? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Before the person finished {activity}, what occurred? Did they do A: {activity_1}, B: {activity_2}, or C: {activity_3} at some point?
+What actions were undertaken by the person some time before their involvement in {activity}? Did they carry out A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Any time prior to {activity}, what actions were performed by the person? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Before someone completed {activity}, what actions were witnessed? Did they engage in A: {activity_1}, B: {activity_2}, or C: {activity_3} any time prior to that?
+What happened before the person did {activity}? Did they proceed to A: {activity_1}, B: {activity_2}, or C: {activity_3} any time prior to that?
+Before {activity}, what did the person do? Did they engage in A: {activity_1}, B: {activity_2}, or C: {activity_3} any time prior to that?
+What actions occurred at any time before someone engaged in {activity}? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?

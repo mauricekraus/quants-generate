@@ -1,0 +1,33 @@
+What happened immediately before {activity}?
+What happened immediately before a person was {activity}?
+What happened immediately before someone was {activity}?
+Which action happened right before a person was {activity}?
+Which action happened right before {activity}?
+Which action happened right before someone was {activity}?
+Which was done right before a person was {activity}?
+Which was done right before {activity}?
+Which was done right before someone was {activity}?
+What occurred right before {activity}?
+What occurred right before a person was {activity}?
+What occurred right before someone was {activity}?
+A person was {activity}. What happened right before that?
+Right before a person was {activity}, what happened?
+Right before a person engaged in {activity}, what did the person do?
+Immediately prior to {activity}, what action did the person perform?
+What did the person do right before {activity}?
+Which action was done right before someone started {activity}?
+What did the person engage in right before {activity}?
+Right before the person was {activity}, what did they engage in?
+Before engaging in {activity}, what occurred immediately before?
+What action took place right before someone was {activity}?
+Right before the person performed {activity}, what happened?
+What did the person do right before engaging in {activity}?
+Immediately prior to the individual {activity}, what occurred?
+What activity took place right before the person did {activity}?
+Immediately before performing {activity}, what did the person do?
+What happened right before the person was {activity}?
+What action can be observed right before the person was {activity}?
+Right before the person did {activity}, what occurred?
+Right before engaging in {activity}, what did the person do?
+What action was undertaken by the person right before their involvement in {activity}?
+Immediately prior to {activity}, what action was performed by the person?

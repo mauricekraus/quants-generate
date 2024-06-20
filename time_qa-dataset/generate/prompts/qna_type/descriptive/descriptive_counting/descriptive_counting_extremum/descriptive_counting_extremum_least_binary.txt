@@ -1,0 +1,18 @@
+Was the person performing {activity} the least often in the sequence?
+The person did {activity}. Was that the action that happened least often in the sequence?
+Was {activity} the least frequently performed action by the person in the sequence?
+In terms of occurrence, was the person's involvement in {activity} the least common in the sequence?
+Did the person participate in {activity} the fewest number of times throughout the sequence?
+Was {activity} the action that took place with the lowest occurrence by the individual in the sequence?
+Did the person have the smallest number of occurrences while performing {activity} in the given sequence?
+Was {activity} the least frequently observed action by the person within the sequence?
+Did the person engage in {activity} the least often compared to other actions in the sequence?
+Was {activity} the least commonly undertaken action by the person throughout the sequence?
+Was the person's involvement in {activity} the least frequent in the sequence?
+Did the person perform {activity} with the lowest frequency among all actions in the sequence?
+Was {activity} the least frequently executed action by the person throughout the sequence?
+Did the person have the fewest instances of engaging in {activity} compared to other actions in the sequence?
+Was {activity} the action that occurred least often by the person in the given sequence?
+Did the person participate in {activity} the fewest number of times among all actions in the sequence?
+Was {activity} the action that happened least frequently for the person in the sequence?
+Did the person engage in {activity} less frequently than any other action in the sequence?

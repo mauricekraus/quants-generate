@@ -1,0 +1,12 @@
+How many times is the person {activity}? A: {number1}, B: {number2}, C: {number3}
+What is the number of times the person engages in {activity}? Option A: {number1}, Option B: {number2}, Option C: {number3}.
+How often does the person perform {activity}? Is it {number1} times (Option A), {number2} times (Option B), or {number3} times (Option C)?
+Can you provide the number of occurrences when the person is involved in {activity}? Option A: {number1}, Option B: {number2}, Option C: {number3}.
+How often does the person engage in {activity}? Do they do it {number1} times (Option A), {number2} times (Option B), or {number3} times (Option C)?
+How frequently does the person partake in {activity}? Is it {number1} times (Option A), {number2} times (Option B), or {number3} times (Option C)?
+What is the number of times the person performs {activity}? A: {number1}, B: {number2}, C: {number3}
+How often does the person undertake {activity}? A: {number1}, B: {number2}, C: {number3}
+What is the number of times the person participates in {activity}? Is it {number1} times (Option A), {number2} times (Option B), or {number3} times (Option C)?
+How often does the person engage in {activity}? A: {number1}, B: {number2}, C: {number3}
+Can you provide the number of times the person participates in {activity}? A: {number1}, B: {number2}, C: {number3}
+Regarding {activity}, what is the frequency of the person's involvement? Is it {number1} (Option A), {number2} (Option B), or {number3} (Option C)?

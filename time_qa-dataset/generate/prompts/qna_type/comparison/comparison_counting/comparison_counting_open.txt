@@ -1,0 +1,24 @@
+Which action is performed as many times as {activity}?
+Among the actions, which one shares the same frequency of occurrence as {activity}?
+Tell me the action that happens with an equal number of occurrences as {activity}.
+Identify the action that takes place as often as {activity}.
+Point out the action performed with the same number of times as {activity}.
+Among the actions, which one happens just as often as {activity}?
+Which action is performed an equal number of times as {activity}?
+Which action occurs with an equivalent frequency to {activity}?
+Can you determine an action happening with an equal number of occurrences as {activity}?
+Point out the action that takes place as many times as {activity}.
+Which action is executed as many times as {activity} occurs?
+Tell me an action that happens with the same frequency of occurrence as {activity}.
+Among the actions, which one matches the occurrence frequency of {activity}?
+Tell me an action that has the same number of occurrences as {activity}.
+Identify the action that occurs as frequently as {activity} does.
+Which action shares an equal frequency of occurrence with {activity}?
+Point out an action that happens as often as {activity} does.
+Among the actions, which one is performed with the same frequency as {activity}?
+Can you name an action that occurs an equal number of times as {activity}?
+Which action is carried out the same number of times as {activity} happens?
+Tell me an action that occurs as frequently as {activity} takes place.
+Which activity has an equivalent frequency of occurrence to {activity}?
+Can you identify an action that matches the number of occurrences of {activity}?
+Among the actions, which one has the same frequency of happening as {activity}?

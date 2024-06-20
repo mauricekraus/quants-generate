@@ -1,0 +1,19 @@
+What was the first action performed by the person? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What was the action performed by the person as the first one? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Which activity can be identified as the very first action carried out by the person? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among the following options, which action did the person perform first? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Regarding the initial action undertaken by the person, which activity was it? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among the given choices, what was the first action executed by the person? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Considering the options, which action did the person start performing? Did they carry out A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among the activities provided, which one did the person engage in as the first action? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among the provided alternatives, what action can be identified as the first one performed by the person? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Regarding the initial activity demonstrated by the person, which action did they commence with? A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Considering the options, what was the first action observed? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among the provided choices, which action did the person initiate as their first action? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Which action did the person perform as the first action? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among the given options, what was the first activity done by the person? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Considering the choices, which action did the person start off with? A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Regarding the first action demonstrated by the person, which activity was performed? Did they carry out A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among the provided options, which action did the person begin their actions with? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Which activity did the person initiate as the first action? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Considering the options, what action did the person perform as their first action? Did they carry out A: {activity_1}, B: {activity_2}, or C: {activity_3}?

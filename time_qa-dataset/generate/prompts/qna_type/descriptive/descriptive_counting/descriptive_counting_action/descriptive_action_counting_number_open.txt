@@ -1,0 +1,14 @@
+Which action does the person perform {number} times?
+The person performs an action {number} times. Which action is it?
+Among the actions, which one does the person repeat {number} times?
+Which action does the person undertake {number} times?
+The person is involved in performing {number} instances of which action?
+Out of the actions available, which one does the person carry out {number} times?
+Can you determine the action that the person does {number} times?
+Can you determine the action that the person performs {number} times?
+Among the options, which action does the person engage in {number} times?
+Which specific action does the person execute {number} times?
+What is the action that the person engages in {number} times?
+Which action does the person carry out {number} times?
+Which action is performed {number} times by the person?
+In what activity is the person involved in {number} times?

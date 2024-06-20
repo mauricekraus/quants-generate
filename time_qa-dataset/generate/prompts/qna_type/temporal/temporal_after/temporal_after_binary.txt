@@ -1,0 +1,20 @@
+The person was {activity_1}. Was it {activity_2} at some point after that?
+At a certain point, the person is {activity_1}. Are they {activity_2} some time later?
+Did the person engage in {activity_2} at any time following {activity_1}?
+After being involved in {activity_1}, did the person transition to {activity_2} at some later point?
+Was {activity_2} observed as a subsequent action some time after the person was {activity_1}?
+After being {activity_1}, did the person later perform {activity_2}?
+Did the person transition to {activity_2} at a later time after engaging in {activity_1}?
+Did the person display {activity_2} after previously being involved in {activity_1}?
+After {activity_1}, did the person proceed to {activity_2} at a later stage?
+After the initial instance of {activity_1}, did the person later participate in {activity_2}?
+Was {activity_2} observed as a subsequent action to the person's prior {activity_1}?
+Did the person do {activity_2} some time after {activity_1}?
+Did {activity_2} follow {activity_1} at some point?
+Some time after {activity_1}, did the person engage in {activity_2}?
+Was {activity_2} one of the next actions for the person after {activity_1}?
+Did the person move on to {activity_2} after {activity_1} at some point?
+Was {activity_2} observed as a subsequent action for the person some time after {activity_1}?
+Some time after {activity_1}, did the person perform {activity_2}?
+Did the person proceed to {activity_2} some time after {activity_1}?
+Did {activity_2} happen some time after {activity_1} for the person?

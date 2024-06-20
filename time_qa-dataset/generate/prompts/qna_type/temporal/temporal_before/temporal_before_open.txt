@@ -1,0 +1,31 @@
+What happened some time before {activity}?
+What happened some time before a person was {activity}?
+What happened some time before someone was {activity}?
+Which action happened some time before a person was {activity}?
+Which action happened some time before {activity}?
+Which action happened some time before someone was {activity}?
+Which was done some time before a person was {activity}?
+Which was done some time before {activity}?
+Which was done some time before someone was {activity}?
+What occurred some time before {activity}?
+What occurred some time before a person was {activity}?
+What occurred some time before someone was {activity}?
+Before a person was {activity}, what happened some time before?
+Which actions were done before someone did {activity}?
+What did the person engage in at any point before {activity}?
+Before the person was {activity}, what happened at any time before?
+Before engaging in {activity}, what happened some time previously?
+What actions took place prior to someone being involved in {activity}?
+What did the person do some time before engaging in {activity}?
+Any time prior to the individual {activity}, what occurred beforehand?
+Before the performance of {activity} by the person, what actions did the person do at any time before?
+What activities took place some time before the person's involvement in {activity}?
+Some time before performing {activity}, what did the person do?
+What happened at any time before the person was {activity}?
+What actions were observed some time before the person was {activity}?
+Before engaging in {activity}, what did the person do at any time before?
+What actions were undertaken by the person before their involvement in {activity}?
+What happened at some point before the person did {activity}?
+Some time before {activity}, what did the person do?
+What followed at some point before someone engaged in {activity}?
+What did the person do some time before {activity}?

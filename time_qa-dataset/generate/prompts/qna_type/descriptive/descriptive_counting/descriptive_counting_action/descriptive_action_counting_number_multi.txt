@@ -1,0 +1,14 @@
+Which action does the person perform {number} times? A: {activity1}, B: {activity2} or C: {activity3}
+Which activity is performed {number} times by the person? A: {activity1}, B: {activity2}, or C: {activity3}?
+The person is engaging in an activity {number} times. Which activity is it? A: {activity1}, B: {activity2}, or C: {activity3}?
+Among the activities, which one is repeated {number} times by the person? A: {activity1}, B: {activity2}, or C: {activity3}?
+Which activity does the person undertake {number} times? A: {activity1}, B: {activity2}, or C: {activity3}?
+The person is involved in performing {number} instances of which activity? A: {activity1}, B: {activity2}, or C: {activity3}?
+Out of the available activities, which one does the person carry out {number} times? A: {activity1}, B: {activity2}, or C: {activity3}?
+Can you determine the activity that the person does {number} times? A: {activity1}, B: {activity2}, or C: {activity3}?
+Can you determine the activity that the person performs {number} times? A: {activity1}, B: {activity2}, or C: {activity3}?
+Among the options, which activity does the person engage in {number} times? A: {activity1}, B: {activity2}, or C: {activity3}?
+Which specific activity does the person execute {number} times? A: {activity1}, B: {activity2}, or C: {activity3}?
+What is the activity that the person engages in {number} times? A: {activity1}, B: {activity2}, or C: {activity3}?
+Which activity does the person carry out {number} times? A: {activity1}, B: {activity2}, or C: {activity3}?
+In what activity is the person involved {number} times? A: {activity1}, B: {activity2}, or C: {activity3}?

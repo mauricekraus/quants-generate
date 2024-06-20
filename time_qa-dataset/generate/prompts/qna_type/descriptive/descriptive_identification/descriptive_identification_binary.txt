@@ -1,0 +1,29 @@
+Is the individual performing {activity} at {time}?
+At {time}, is the person engaged in {activity}?
+Is {activity} the action the person is doing at {time}?
+What is the person doing at {time}? Is it {activity}?
+Describe the activity of the person at {time}. Is it {activity}?
+Is the person participating in {activity} at {time}?
+At {time}, is the person performing {activity}?
+Can you explain what the person is doing at {time}? Is it {activity}?
+What activity is the person involved in at {time}? Is it {activity}?
+Describe the action of the person at {time}. Is it {activity}?
+Is the person {activity} at {time}?
+At {time}, what is the person doing? Is it {activity}?
+Can you provide information about the person's action at {time}? Is it {activity}?
+What is the person's activity at {time}? Is it {activity}?
+Describe the behavior of the person at {time}. Is it {activity}?
+Is the person undertaking {activity} at {time}?
+At {time}, is the individual doing {activity}?
+What action is the person performing at {time}? Is it {activity}?
+Is {activity} the action the person is engaged in at {time}?
+Is {activity} the action the person is performing at {time}?
+Is the person involved in {activity} at {time}?
+Is the person performing {activity} at {time}?
+At {time}, is the person engaging in {activity}?
+Is {activity} the action the person is undertaking at {time}?
+At {time}, is the person involved in {activity}?
+What activity is the person engaged in at {time}? Is it {activity}?
+What action is the person engaging in at {time}? Is it {activity}?
+Is {activity} the action the person is executing at {time}?
+Is the person engaging in {activity} at {time}?

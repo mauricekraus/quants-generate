@@ -1,0 +1,8 @@
+notebooks/*.pkl
+notebooks/*.pdf
+
+dataset-simple/
+generated-dataset/
+generated-dataset-*/
+
+sample*.mp4

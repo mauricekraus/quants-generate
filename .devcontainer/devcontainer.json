@@ -14,8 +14,8 @@
     {"source": "/storage-01/common-ts/datasets/AMASS", "target": "/workspaces/tsqa-pipeline-v2/stmc/datasets", "type": "bind"},
     {"source": "/storage-01/common-ts/deps", "target": "/workspaces/tsqa-pipeline-v2/stmc/deps", "type": "bind"},
     {"source": "/storage-01/common-ts/models", "target": "/workspaces/tsqa-pipeline-v2/stmc/pretrained_models", "type": "bind"}
-
   ],
+  "postCreateCommand": "python -m pip install -e time_qa-dataset[dev]",
   "remoteUser": "root", // More info: https://aka.ms/dev-containers-non-root
   "customizations": {
     "vscode": {
@@ -26,7 +26,7 @@
         "genieai.chatgpt-vscode",
         "ms-toolsai.jupyter",
         "mikestead.dotenv",
-        "ms-python.black-formatter"
+        "charliermarsh.ruff"
       ]
     }
   },

@@ -1,0 +1,27 @@
+A person was {activity}. Was it A: {activity_1}, B: {activity_2}, or C: {activity_3} that happened directly after?
+Following {activity}, what action did the person perform directly after? A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What did the person do directly after {activity}? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What did the person do immediately after {activity}? Was it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Someone was {activity}. Did they engage in A: {activity_1}, B: {activity_2}, or C: {activity_3} directly after that?
+Which action was done directly after someone was {activity}? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What did the person engage in directly after {activity}? Did they participate in A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+In the sequence, the person is performing {activity}. After that, did they immediately proceed to A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+In the sequence, the person is performing {activity}. After that, did they proceed to A: {activity_1}, B: {activity_2}, or C: {activity_3} directly after?
+After engaging in {activity}, what followed directly after? Did the person perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What action took place directly after someone was involved in {activity}? Did they carry out A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+After the person performed {activity}, what ensued directly after? Did they engage in A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What did the person do directly after engaging in {activity}? Did they proceed to A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Once the individual completed {activity}, what occurred directly next? Did they undertake A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Following the performance of {activity} by the person, what action followed directly after? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What activity took place directly after the person's involvement in {activity}? Did they engage in A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+After performing {activity}, what did the person proceed to do directly after? Did they engage in A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What action was observed directly following the person {activity}? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Once the person finished {activity}, what followed directly after? Did they proceed to A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+After engaging in {activity}, what did the person proceed to engage in? Did they engage in A: {activity_1}, B: {activity_2}, or C: {activity_3} directly after it?
+What action was undertaken by the person directly after their involvement in {activity}? Did they carry out A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Directly following {activity}, what action was performed by the person? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+After someone completed {activity}, what action was witnessed directly after? Did they engage in A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What happened directly after the person did {activity}? Did they proceed to A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+After {activity}, what did the person do directly next? Did they engage in A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What followed directly after someone engaged in {activity}? Did they perform A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Following {activity}, what action did the person perform directly after? A: {activity_1}, B: {activity_2}, or C: {activity_3}?

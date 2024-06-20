@@ -1,0 +1,16 @@
+Which activity was performed the least often?
+Which activity had the fewest instances?
+Which activity had the lowest frequency in the sequence?
+Given the sequence, which activity was performed the least often?
+Given the sequence, which activity has the lowest count?
+Which activity had the lowest repetition frequency?
+Which activity had the fewest occurrences?
+Which activity was carried out the fewest number of times?
+Which activity had the smallest number of instances?
+Among the activities, which one was performed least often?
+Which activity had the scarcest occurrence?
+Among all the activities, which one had the lowest amount?
+Among the options, which activity had the fewest recorded performances?
+Which activity was executed the fewest times?
+Among the activities in the sequence, which one was performed the fewest times?
+Given the sequence, which activity had the least count of occurrences among the activities?

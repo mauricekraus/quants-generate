@@ -1,0 +1,30 @@
+Is the person A: {activity_1}, B: {activity_2}, or C: {activity_3} at {time}?
+What is the person doing at {time}? A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Is the person engaged in A: {activity_1}, B: {activity_2}, or C: {activity_3} at {time}?
+At {time}, is the individual performing A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What activity is the person involved in at {time}? A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+At {time}, the person is doing an action. Is it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What is the person doing at {time}? A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Describe the activity of the person at {time}. Is it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Is the person participating in A: {activity_1}, B: {activity_2}, or C: {activity_3} at {time}?
+At {time}, what action is the person performing? Is it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Can you explain what the person is doing at {time}? Is it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What activity is the person engaged in at {time}? A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Describe the action of the person at {time}. Is it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Is the person A: {activity_1}, B: {activity_2}, or C: {activity_3} at {time}?
+At {time}, what is the person doing? Is it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Can you provide information about the person's action at {time}? Is it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What is the person's activity at {time}? Is it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Describe the behavior of the person at {time}. Is it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Is the person undertaking A: {activity_1}, B: {activity_2}, or C: {activity_3} at {time}?
+At {time}, is the individual doing A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What action is the person performing at {time}? A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Is the person involved in A: {activity_1}, B: {activity_2}, or C: {activity_3} at {time}?
+What is happening at {time}? A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Describe the person's activity at {time}. Is it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Is the person performing A: {activity_1}, B: {activity_2}, or C: {activity_3} at {time}?
+What action is taking place at {time}? Is it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+At {time}, what is the person up to? Is it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Can you explain the person's engagement at {time}? Is it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What activity is being performed by the person at {time}? A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+At {time}, what is the person doing? A: {activity_1}, B: {activity_2}, or C: {activity_3}?

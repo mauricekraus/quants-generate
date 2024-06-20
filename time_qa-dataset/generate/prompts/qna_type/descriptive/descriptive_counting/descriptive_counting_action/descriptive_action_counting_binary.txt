@@ -1,0 +1,27 @@
+Is the person {activity} {number} times?
+Is the person engaging in {activity} {number} times?
+Does the person do {activity} {number} times?
+Can it be said that the person is involved in {activity} {number} times?
+Is the individual performing {activity} {number} times?
+Is it accurate to say that the person participates in {activity} {number} times?
+Does the person take part in {activity} {number} times?
+Is the person involved in {activity} {number} times?
+Is it true that the person undertakes {activity} {number} times?
+Would it be correct to say that the person carries out {activity} {number} times?
+Can we confirm that the person performs {activity} {number} times?
+Does the person engage in {activity} {number} times?
+Is it accurate to say that the person repeats {activity} {number} times?
+Would it be accurate to state that the person carries out {activity} {number} occurrences?
+Can it be said that the person performs {activity} {number} times?
+Is it accurate to state that the person frequently repeats {activity} {number} times?
+Can we affirm that the person engages in {activity} {number} times?
+Would it be correct to say that the person carries out {number} {activity} repetitions?
+Is it accurate to state that the person takes part in {activity} {number} times?
+Can it be stated that the individual is engaged in {activity} {number} times?
+Is the person undertaking {activity} {number} times?
+Would it be correct to state that the individual performs {activity} {number} times?
+Can we confirm that the person is involved in {activity} {number} times?
+Can it be affirmed that the person carries out {activity} {number} times?
+Is it accurate to state that the individual repeats {activity} {number} times?
+Can we affirm that the individual is performing {activity} {number} times?
+Is it accurate to say that the individual's involvement in {activity} occurs {number} times?

@@ -1,0 +1,22 @@
+How many times is the person {activity}?"
+The person is {activity}. How often is this happening?
+The person is {activity}. How often is this taking place?
+The person is {activity}. How often is this the case?
+How frequently does the individual partake in {activity}?
+What is the number of times the person has undertaken {activity}?
+How often does the person engage in {activity}?
+What is the number of times the individual has performed {activity}?
+How many occurrences of {activity} have taken place involving the person?
+How many times has the person been observed doing {activity}?
+How often can the individual be seen doing {activity}?
+How often does the person carry out {activity}?
+What is the total number of times the person has engaged in {activity}?
+How often does the individual involve themselves in {activity}?
+What is the cumulative count of times the person has performed {activity}?
+How often does the person execute {activity}?
+How many times has the person carried out {activity}?
+How frequently does the person involve themselves in {activity}?
+How many times has the person executed the task of {activity}?
+How often does the person execute the action {activity}?
+How often does the person undertake {activity}?
+What is the total number of times the person performs {activity}?

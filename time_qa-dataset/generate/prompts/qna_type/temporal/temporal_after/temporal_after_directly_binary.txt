@@ -1,0 +1,37 @@
+At a certain point in time, the person is {activity_1}. Is it {activity_2} right after?
+At a certain point in time, the person is {activity_1}. Is {activity_2} the immediate follow-up?
+After engaging in {activity_1} at a specific moment, does the person directly transition to {activity_2}?
+Did the person immediately start {activity_2} after being involved in {activity_1}?
+Upon performing {activity_1} at a particular time, does the person proceed directly to {activity_2}?
+Right after being {activity_1} at a certain point, does the person engage in {activity_2}?
+Is {activity_2} the immediate action that follows {activity_1} for the person?
+Did the person immediately transition to {activity_2} after engaging in {activity_1}?
+Right after {activity_1}, does the person proceed directly to {activity_2}?
+Is {activity_2} observed as the immediate subsequent action to the person's prior {activity_1}?
+Does the person do {activity_2} directly after {activity_1}?
+Does {activity_2} follow {activity_1} immediately?
+After {activity_1}, does the person engage in {activity_2} right away?
+Is {activity_2} the immediate next action for the person after {activity_1}?
+Does the person move on to {activity_2} immediately after {activity_1} at some point?
+Is {activity_2} observed as the direct follow-up to {activity_1} for the person?
+After {activity_1}, does the person perform {activity_2} right away?
+Does the person proceed directly to {activity_2} after {activity_1}?
+Does {activity_2} happen immediately after {activity_1} for the person?
+At a certain point in time, the person is {activity_1}. Is {activity_2} the immediate action that follows?
+After engaging in {activity_1} at a specific moment, does the person directly move on to {activity_2}?
+Did the person transition directly to {activity_2} right after being involved in {activity_1}?
+Upon performing {activity_1} at a particular time, does the person immediately proceed to {activity_2}?
+Is {activity_2} the immediately subsequent behavior after {activity_1} for the person?
+After {activity_1}, does the person directly engage in {activity_2}?
+Did the person immediately proceed to {activity_2} after performing {activity_1}?
+Right after {activity_1}, does the person directly display {activity_2}?
+Is {activity_2} observed as the immediate action following the person's prior {activity_1}?
+Does the person perform {activity_2} directly after {activity_1}?
+Does {activity_2} occur immediately after {activity_1}?
+After {activity_1}, does the person directly participate in {activity_2}?
+Directly After {activity_1}, does the person directly participate in {activity_2}?
+Is {activity_2} the immediately subsequent action for the person after {activity_1}?
+Does the person transition directly to {activity_2} after {activity_1}?
+Is {activity_2} observed as the immediate action for the person right after {activity_1}?
+After {activity_1}, does the person immediately carry out {activity_2}?
+Does the person proceed directly to {activity_2} right after {activity_1}?

@@ -1,0 +1,19 @@
+What activity is the individual doing at {time}?
+How is the activity called the person is participating in at {time}?
+At {time}, the person is doing an action. Which one is it?
+What is the person doing at {time}?
+What is the person engaged in at {time}?
+At {time}, what action is the person performing?
+Name what the person is doing at {time}?
+What activity is the person involved in at {time}?
+Name the action of the person at {time}.
+What is happening at {time}?
+What action is taking place at {time}?
+Describe the person's behavior at {time}. Which action is it?
+What is the person up to at {time}?
+Can you explain what the person is engaged in at {time}?
+What activity is being performed by the person at {time}?
+At {time}, what is the person doing?
+Can you provide information about the person's action at {time}?
+What is the person's activity at {time}?
+What action is the person undertaking at {time}?

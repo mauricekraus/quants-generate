@@ -1,0 +1,26 @@
+A person was {activity}. Was it A: {activity_1}, B: {activity_2} or C: {activity_3} that happened some time after?
+Following {activity} at some point in time, what actions did the person perform? A: {activity_1}, B: {activity_2} or C: {activity_3}?
+What did the person do after {activity}? Was it A: {activity_1}, B: {activity_2} or C: {activity_3}?
+Someone was {activity}. Did they engage in A: {activity_1}, B: {activity_2} or C: {activity_3} some time after that?
+Which action was done some time after someone was {activity}? Did they perform A: {activity_1}, B: {activity_2} or C: {activity_3}?
+What did the person engage in at any time after {activity}? Did they participate in A: {activity_1}, B: {activity_2} or C: {activity_3}?
+In the sequence, the person is performing {activity}. After that, did they later proceed to A: {activity_1}, B: {activity_2} or C: {activity_3}?
+After engaging in {activity}, what followed some time after it? Did the person perform A: {activity_1}, B: {activity_2} or C: {activity_3}?
+What actions took place some time after someone was involved in {activity}? Did they carry out A: {activity_1}, B: {activity_2} or C: {activity_3}?
+After the person performed {activity}, what ensued at a later point in time? Did they engage in A: {activity_1}, B: {activity_2} or C: {activity_3}?
+What did the person do at some time after engaging in {activity}? Did they proceed to A: {activity_1}, B: {activity_2} or C: {activity_3}?
+Once the individual completed {activity}, what occurred next? Did they undertake A: {activity_1}, B: {activity_2} or C: {activity_3} at some later point?
+Following the performance of {activity} by the person, what actions followed? Did they later perform A: {activity_1}, B: {activity_2} or C: {activity_3}?
+What activities took place some time after the person's involvement in {activity}? Did they engage in A: {activity_1}, B: {activity_2} or C: {activity_3}?
+After performing {activity}, what did the person proceed to do? Did they engage in A: {activity_1}, B: {activity_2} or C: {activity_3} at some point in time after it?
+What actions were observed some later time following the person's {activity}? Did they perform A: {activity_1}, B: {activity_2} or C: {activity_3}?
+Once the person finished {activity}, what followed? Did they later proceed to A: {activity_1}, B: {activity_2} or C: {activity_3}?
+After engaging in {activity}, what did the person proceed to engage in at a later point in time? Did they engage in A: {activity_1}, B: {activity_2} or C: {activity_3}?
+What actions were undertaken by the person some time after their involvement in {activity}? Did they carry out A: {activity_1}, B: {activity_2} or C: {activity_3}?
+Following {activity}, what actions were performed by the person? Did they perform A: {activity_1}, B: {activity_2} or C: {activity_3}?
+After someone completed {activity}, what actions were witnessed? Did they engage in A: {activity_1}, B: {activity_2} or C: {activity_3}?
+What happened after the person did {activity}? Did they proceed to A: {activity_1}, B: {activity_2} or C: {activity_3} at some later point in time?
+After {activity}, what did the person do next? Did they engage in A: {activity_1}, B: {activity_2} or C: {activity_3} at some later point in time?
+What followed some time after someone engaged in {activity}? Did they perform A: {activity_1}, B: {activity_2} or C: {activity_3}?
+Following some time after {activity}, what actions did the person perform? A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+What did the person do some time after {activity}? Was it A: {activity_1}, B: {activity_2} or C: {activity_3}?

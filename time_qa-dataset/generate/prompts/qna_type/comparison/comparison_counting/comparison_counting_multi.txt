@@ -1,0 +1,22 @@
+Which action is performed as many times as {activity}? Is it A: {activity_1}, B: {activity_2}, or C: {activity_3}?
+Among A: {activity_1}, B: {activity_2}, or C: {activity_3}, which action is done the same number of times as {activity}?
+Out of A: {activity_1}, B: {activity_2} and C: {activity_3}, which one occurs as frequently as {activity}?
+Among A: {activity_1}, B: {activity_2} and C: {activity_3}, which action shares an equal occurrence with {activity}?
+Does A: {activity_1}, B: {activity_2} or C: {activity_3} match the frequency of {activity}?
+Which of A: {activity_1}, B: {activity_2} and C: {activity_3} is performed an equal number of times as {activity}?
+Is A: {activity_1}, B: {activity_2} or C: {activity_3} executed with the same frequency as {activity}?
+Which action, among A: {activity_1}, B: {activity_2} and C: {activity_3}, is carried out as frequently as {activity}?
+Which action occurs as frequently as {activity}? Is it A: {activity_1}, B: {activity_2} or C: {activity_3}?
+Among A: {activity_1}, B: {activity_2} and C: {activity_3}, which action happens the same number of times as {activity}?
+Out of A: {activity_1}, B: {activity_2} and C: {activity_3}, which one takes place as often as {activity}?
+Among A: {activity_1}, B: {activity_2} and C: {activity_3}, which action has an equal number of occurrences to {activity}?
+Does A: {activity_1}, B: {activity_2} or C: {activity_3} have the same frequency of happening as {activity}?
+Which action, among A: {activity_1}, B: {activity_2} and C: {activity_3}, happens as often as {activity}?
+Do the actions A: {activity_1}, B: {activity_2} or C: {activity_3} occur with the same frequency as {activity}?
+Are A: {activity_1}, B: {activity_2} or C: {activity_3} performed as often as {activity}?
+Which action, out of A: {activity_1}, B: {activity_2} and C: {activity_3}, has an equivalent frequency to {activity}?
+Does A: {activity_1}, B: {activity_2} or C: {activity_3} happen as frequently as {activity}?
+Among A: {activity_1}, B: {activity_2} and C: {activity_3}, which action is executed as many times as {activity}?
+Is A: {activity_1}, B: {activity_2} or C: {activity_3} happening as often as {activity}?
+Which of the actions A: {activity_1}, B: {activity_2} and C: {activity_3} occurs with the same frequency as {activity}?
+Out of A: {activity_1}, B: {activity_2} and C: {activity_3}, which action takes place as many times as {activity}?

@@ -1,0 +1,21 @@
+A person was {activity}. What happened some time after?
+Someone was {activity}. What happened at a later time?
+Which actions were done some time after someone was {activity}?
+What did the person engage in at any time after {activity}?
+The person was performing {activity}. Some time after that, what happened?
+After engaging in {activity}, what followed at a later point in time?
+What actions took place some time after someone was involved in {activity}?
+After the person performed {activity}, what ensued at a later time?
+What did the person do some time after engaging in {activity}?
+Once the individual completed {activity}, what occurred at a later time?
+Following the performance of {activity} by the person, what actions were done later?
+What activities took place some time after the person's involvement in {activity}?
+What actions were observed following some time after the person {activity}?
+Once the person finished {activity}, what followed at a later time?
+What actions were undertaken by the person some time after their involvement in {activity}?
+Following {activity} after some time, what actions were performed by the person?
+What happened after the person was {activity}?
+After {activity}, what did the person do at a later time?
+What followed some time after someone engaged in {activity}?
+Following {activity}, what actions did the person perform later?
+What did the person do some time after {activity}?

@@ -1,0 +1,17 @@
+Is the action at {time_1} different from the action at {time_2}?
+Is the action at {time_1} not the same as the action at {time_2}?
+Are the activities at {time_1} and {time_2} distinct from each other?
+Do the actions at {time_1} and {time_2} differ?
+Are the actions at {time_1} and {time_2} dissimilar?
+Is there a disparity between the actions at {time_1} and {time_2}?
+Do the actions at {time_1} and {time_2} vary?
+Are the actions at {time_1} and {time_2} not identical?
+Is there a distinction between the actions at {time_1} and {time_2}?
+Are the actions at {time_1} and {time_2} different from each other?
+Are the actions at {time_1} and {time_2} unlike each other?
+Do the activities at {time_1} and {time_2} differ in nature?
+Is there a discrepancy in the actions between {time_1} and {time_2}?
+Are the activities at {time_1} and {time_2} not identical?
+Are the actions carried out at {time_1} distinct from those at {time_2}?
+Is the action at {time_1} not equivalent to the action at {time_2}?
+Are the actions at {time_1} and {time_2} noticeably dissimilar?

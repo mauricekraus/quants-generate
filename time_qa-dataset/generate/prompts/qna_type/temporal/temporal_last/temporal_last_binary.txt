@@ -1,0 +1,21 @@
+Was {activity} the last action performed?
+Was {activity} the final action done by the person?
+Did the person perform {activity} as their final action?
+Is it accurate to say that {activity} was the very last action done?
+Did the person end with {activity} as the final action?
+Was {activity} the final action undertaken by the person?
+Did the person conclude the movement by doing {activity}?
+Is it correct to assert that {activity} was the last action performed?
+Did the person finish with {activity}?
+Was {activity} the very last action observed?
+Did the person conclude their actions with {activity}?
+Is it true that {activity} was the final action demonstrated by the person?
+After all other actions, did the person engage in {activity}?
+Can we conclude that {activity} was the very last action carried out?
+Was {activity} the final activity done by the person?
+Did the person end by performing {activity}?
+Is it accurate to state that {activity} was the very last action executed?
+Did the person finish with {activity} as their final action?
+Was {activity} the final activity performed by the person?
+Is it true that {activity} was the last action undertaken?
+Did the person conclude their actions by engaging in {activity}?

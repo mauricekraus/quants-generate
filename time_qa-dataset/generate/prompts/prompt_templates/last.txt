@@ -1,0 +1,11 @@
+The finishing action of the person is {activity}
+The person is terminating the sequence with {activity}
+Finally, the person is {activity}
+The last action is {activity}
+The sequence finishes with {activity}
+As a last action, the person is {activity}
+As the last action, the person is performing {activity}
+The person is closing the sequence with {activity}
+Lastly, the person is {activity}
+The last movement the person is doing is {activity}
+{Activity} is the last action performed by the person

@@ -1,0 +1,39 @@
+What happened immediately after {activity}?
+What happened immediately after a person was {activity}?
+What happened immediately after someone was {activity}?
+Which action happened right after a person was {activity}?
+Which action happened right after {activity}?
+Which action happened right after someone was {activity}?
+Which was done right after a person was {activity}?
+Which was done right after {activity}?
+Which was done right after someone was {activity}?
+What occurred right after {activity}?
+What occurred right after a person was {activity}?
+What occurred right after someone was {activity}?
+A person was {activity}. What happened directly next?
+Someone was {activity}. What happened directly next?
+Which action was done right after someone was {activity}?
+What did the person engage in immediately after {activity}?
+In the sequence, the person is performing {activity}. What happened directly after that?
+After engaging in {activity}, what followed immediately?
+What action took place right after someone was involved in {activity}?
+What action took place subsequent to someone being involved in {activity}?
+After the person performed {activity}, what ensued directly?
+What did the person do right after engaging in {activity}?
+Once the individual completed {activity}, what occurred next?
+Following the performance of {activity} by the person, what action followed immediately?
+What activity took place right after the person's involvement in {activity}?
+What activity took place subsequent to the person's involvement in {activity}?
+After performing {activity}, what did the person proceed to do directly after?
+What happened right after the person is {activity}?
+What action was observed directly following the person {activity}?
+Once the person finished {activity}, what followed immediately?
+After engaging in {activity}, what did the person proceed to engage in next?
+What action was undertaken by the person right after their involvement in {activity}?
+Directly following {activity}, what action was performed by the person?
+After someone completed {activity}, what action was witnessed immediately?
+What happened directly after the person did {activity}?
+After {activity}, what did the person do as the next activity?
+What activity followed right after someone engaged in {activity}?
+Following {activity}, what action did the person perform immediately after?
+What did the person do right after {activity}?
