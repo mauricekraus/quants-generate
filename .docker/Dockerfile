@@ -15,12 +15,11 @@ RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.d
 RUN mkdir -p workspaces/$PROJECT_NAME
 WORKDIR /workspaces/$PROJECT_NAME
 
-COPY requirements.txt .
+COPY stmc/requirements.txt .
 
 RUN \
   python -m pip install --upgrade pip && \
   pip install "torch==2.0.1" -r requirements.txt  
-
 
 ENV PYTHONPATH=$PYTHONPATH:src
 

@@ -1,0 +1,9 @@
+lightning_logs
+__pycache__
+.aim
+.cache
+.executor.env
+datasets
+pretrained_models
+deps
+output

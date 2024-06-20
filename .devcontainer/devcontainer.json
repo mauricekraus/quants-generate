@@ -11,9 +11,9 @@
     }
   },
   "mounts": [
-    {"source": "/storage-01/common-ts/datasets/AMASS", "target": "/workspaces/tsqa-pipeline-v2/datasets", "type": "bind"},
-    {"source": "/storage-01/common-ts/deps", "target": "/workspaces/tsqa-pipeline-v2/deps", "type": "bind"},
-    {"source": "/storage-01/common-ts/models", "target": "/workspaces/tsqa-pipeline-v2/pretrained_models", "type": "bind"}
+    {"source": "/storage-01/common-ts/datasets/AMASS", "target": "/workspaces/tsqa-pipeline-v2/stmc/datasets", "type": "bind"},
+    {"source": "/storage-01/common-ts/deps", "target": "/workspaces/tsqa-pipeline-v2/stmc/deps", "type": "bind"},
+    {"source": "/storage-01/common-ts/models", "target": "/workspaces/tsqa-pipeline-v2/stmc/pretrained_models", "type": "bind"}
 
   ],
   "remoteUser": "root", // More info: https://aka.ms/dev-containers-non-root
@@ -32,7 +32,7 @@
   },
   "runArgs": [
     "--gpus",
-    "device=1",
+    "\"device=13,14,15\"",
     "--shm-size",
     "50G"
   ]

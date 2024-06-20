@@ -228,7 +228,8 @@ modelpath = cfg.data.text_encoder.modelname
 mean_pooling = cfg.data.text_encoder.mean_pooling
 text_model = TextToEmb(modelpath=modelpath, mean_pooling=mean_pooling, device=device)
 
-video_dir = os.path.join(c.run_dir, f"app_generations_{str(ckpt_name)}")
+
+video_dir = os.path.join("output", f"app_generations_{str(ckpt_name)}")
 os.makedirs(video_dir, exist_ok=True)
 vext = ".mp4"
 
