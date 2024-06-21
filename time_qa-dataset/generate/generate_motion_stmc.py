@@ -100,12 +100,17 @@ def generate_motion(
         for instance_path in all_instance_files
         if not (instance_path.parent / "data.hdf5").exists()
     ]
-    for _ in range(len(all_instance_files) - len(missing_instances)):
-        rtpt.step()
 
     console.print(
         f"Missing {len(missing_instances)} instances ({len(missing_instances) * 100 / len(all_instance_files):.2f}%)"
     )
+
+    if not missing_instances:
+        console.print("Nothing to generate")
+        return
+
+    for _ in range(len(all_instance_files) - len(missing_instances)):
+        rtpt.step()
 
     console.print("Loading diffusion model ...", end="")
     motion_maker = MotionMaker(gpu_id=gpu_id, smplh_variant=smplh_variant)

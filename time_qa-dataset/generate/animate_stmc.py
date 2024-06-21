@@ -4,7 +4,7 @@ import os
 import sys
 from collections.abc import Callable
 from functools import partial
-from itertools import islice
+from multiprocessing.dummy import Pool as ThreadPool
 from pathlib import Path
 from shutil import rmtree
 from typing import Optional
@@ -42,6 +42,9 @@ def animate_motion(
         callback=check_dataset_path,
     ),
     only_data_id: Optional[int] = None,
+    n_parallel: int = typer.Option(
+        1, help="Use carefully. The process is CPU hungry and already parallelizes some rendering."
+    ),
     render_simple: bool = True,
     render_smpl: bool = True,
 ):
@@ -68,12 +71,15 @@ def animate_motion(
         f"Missing {len(missing_instances)} instances ({len(missing_instances) * 100 / len(all_instance_files):.2f}%)"
     )
 
+    if not missing_instances:
+        console.print("Nothing to render")
+        return
+
     console.print("Loading animation engine ...", end="")
     renderer = MotionRenderer(render_simple=render_simple, render_smpl=render_smpl)
     console.print(" done")
 
-    # TODO: this could be parallelized trivially
-    for instance_path in track(missing_instances, console=console):
+    def process_single(instance_path: Path) -> None:
         with h5py.File(instance_path.parent / "data.hdf5", "r") as hdf5_file:
             data_joints = hdf5_file["joints"][:]
             data_vertices = hdf5_file["vertices"][:]
@@ -84,6 +90,14 @@ def animate_motion(
             directory=instance_path.parent,
             progress=partial(track, console=console, description="Rendering SMPL"),
         )
+
+    with ThreadPool(processes=n_parallel) as pool:
+        for _ in track(
+            pool.imap_unordered(process_single, missing_instances),
+            total=len(missing_instances),
+            console=console,
+        ):
+            pass
 
 
 class MotionRenderer:
@@ -113,14 +127,3 @@ class MotionRenderer:
             self.smpl_renderer(data_vertices, output=directory / "render_smpl.mp4", progress_bar=None)
             # Clean up the temporary directory
             rmtree(directory / "render_smpl")
-
-
-def batched(iterable, n):
-    """batched('ABCDEFG', 3) → ABC DEF G"""
-
-    # Copied from Pytorch 3.12 (https://docs.python.org/3/library/itertools.html#itertools.batched)
-    if n < 1:
-        raise ValueError("n must be at least one")
-    iterator = iter(iterable)
-    while batch := tuple(islice(iterator, n)):
-        yield batch
