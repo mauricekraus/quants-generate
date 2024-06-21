@@ -6,6 +6,7 @@ from collections.abc import Callable
 from functools import partial
 from itertools import islice
 from pathlib import Path
+from shutil import rmtree
 from typing import Optional
 
 import h5py
@@ -71,6 +72,7 @@ def animate_motion(
     renderer = MotionRenderer(render_simple=render_simple, render_smpl=render_smpl)
     console.print(" done")
 
+    # TODO: this could be parallelized trivially
     for instance_path in track(missing_instances, console=console):
         with h5py.File(instance_path.parent / "data.hdf5", "r") as hdf5_file:
             data_joints = hdf5_file["joints"][:]
@@ -110,7 +112,7 @@ class MotionRenderer:
         if self.render_smpl:
             self.smpl_renderer(data_vertices, output=directory / "render_smpl.mp4", progress_bar=None)
             # Clean up the temporary directory
-            (directory / "render_smpl").unlink(missing_ok=True)
+            rmtree(directory / "render_smpl")
 
 
 def batched(iterable, n):
