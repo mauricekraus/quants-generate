@@ -473,7 +473,12 @@ class MeshViewer(object):
 
         iterator = enumerate(mesh_seq)
         if progress_bar is not None:
-            iterator = progress_bar(list(iterator), desc="Import meshes in pyrender")
+            try:
+                iterator = progress_bar(
+                    list(iterator), desc="Import meshes in pyrender"
+                )
+            except TypeError:
+                iterator = progress_bar(list(iterator))
 
         for mid, mesh in iterator:
             if isinstance(mesh, trimesh.Trimesh):

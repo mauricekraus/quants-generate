@@ -24,13 +24,15 @@ dependencies = [
     "matplotlib",
     "typer",
     "datasets",
+    "h5py",
+    "rtpt",
     "lightning",
 ]
 
 # The package is discovered automatically (including the py.typed file):
 # https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#flat-layout
 [tool.setuptools.packages.find]
-where = ["generate"]
+exclude = ["notebooks"]
 
 [project.optional-dependencies]
 dev = [

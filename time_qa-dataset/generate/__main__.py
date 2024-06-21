@@ -1,11 +1,16 @@
 from typer import Typer
 
 from .prompts import generate as generate_prompts
-from .render import plot_example
+from .render_priormdm import plot_example
+from .generate_motion_stmc import generate_motion
+from .animate_stmc import animate_motion
 
 app = Typer()
-app.command("render")(plot_example)
 app.command("prompts")(generate_prompts)
+app.command("render-priormdm")(plot_example)
+app.command("generate-motion-stmc")(generate_motion)
+app.command("render-stmc")(animate_motion)
+
 
 if __name__ == "__main__":
     app()

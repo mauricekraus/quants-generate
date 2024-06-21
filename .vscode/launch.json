@@ -5,6 +5,32 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python Debugger: Current File in STMC",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/stmc",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python Debugger: Generate Motion",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "module": "generate",
+            "console": "integratedTerminal",
+            "args": "generate-motion-stmc --dataset-path /workspaces/tsqa-pipeline-v2/dataset-folder"
+        },
+        {
+            "name": "Python Debugger: Animate Motion",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "module": "generate",
+            "console": "integratedTerminal",
+            "args": "render-stmc --dataset-path /workspaces/tsqa-pipeline-v2/dataset-folder"
+        },
+        {
             "name": "Python Debugger: Current File with Arguments",
             "type": "debugpy",
             "request": "launch",

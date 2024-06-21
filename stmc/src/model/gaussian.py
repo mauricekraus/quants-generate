@@ -242,7 +242,11 @@ class GaussianDiffusion(DiffuserBase):
 
         iterator = range(self.timesteps - 1, -1, -1)
         if progress_bar is not None:
-            iterator = progress_bar(list(iterator), desc="Diffusion")
+            try:
+                # tqdm
+                iterator = progress_bar(list(iterator), desc="Diffusion")
+            except TypeError:
+                iterator = progress_bar(list(iterator))
 
         for diffusion_step in iterator:
             t_seq = torch.full((n_seq,), diffusion_step)
