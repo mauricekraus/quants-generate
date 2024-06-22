@@ -51,7 +51,7 @@ def generate(
     answer_types: AnswerType = typer.Option(AnswerType.all, help="Type of answers"),
     num_samples: int = typer.Option(100, min=1, help="Size of the generated dataset."),
     print_first: int = typer.Option(
-        3, min=0, help="Number of data instances to print colorfully in the terminal."
+        1, min=0, help="Number of data instances to print colorfully in the terminal."
     ),
     minimum_actions: int = typer.Option(4, min=1, help="Minimum number of actions in a data instance."),
     maximum_actions: int = typer.Option(4, min=1, help="Maximum number of actions in a data instance."),
@@ -63,7 +63,7 @@ def generate(
     ),
     num_qapairs: int = typer.Option(5, min=1, help="Number of question-answer pairs in a data instance."),
     time_series_length: float = typer.Option(
-        12.0, min=0.1, help="Total length of the time series in seconds."
+        16.0, min=0.1, help="Total length of the time series in seconds."
     ),
     minimum_fraction_of_time_per_step: float = typer.Option(
         1.0,
@@ -78,8 +78,8 @@ def generate(
         1,
         min=0,
         help="Seed for random number generation to ensure reproducibility.",
-        callback=range_assert_callback,
-    ),  # callback need to go last
+        callback=range_assert_callback,  # this callback needs to go last
+    ),
     output_dir: Path = typer.Option(
         Path("generated-dataset"),
         help="Directory where the generated dataset will be saved.",
@@ -180,7 +180,7 @@ def generate(
     plt.yticks(range(len(stats["question_types"])), labels_QT)
     for i, v in enumerate(values_QT):
         plt.text(v, i, str(v), color="black", va="center")
-    plt.savefig(output_dir / "question_types.png")
+    plt.savefig(output_dir / "question_types.png", bbox_inches="tight")
 
     plt.figure(2)
     values_AT = list(stats["answer_types"].values())
@@ -189,7 +189,7 @@ def generate(
     plt.yticks(range(len(stats["answer_types"])), labels_AT)
     for i, v in enumerate(values_AT):
         plt.text(v, i, str(v), color="black", va="center")
-    plt.savefig(output_dir / "answer_types.png")
+    plt.savefig(output_dir / "answer_types.png", bbox_inches="tight")
 
     plt.figure(3)
     values_CA = list(stats["correct_answers"].values())
@@ -198,6 +198,6 @@ def generate(
     plt.yticks(range(len(stats["correct_answers"])), labels_CA)
     for i, v in enumerate(values_CA):
         plt.text(v, i, str(v), color="black", va="center")
-    plt.savefig(output_dir / "correct_answers.png")
+    plt.savefig(output_dir / "correct_answers.png", bbox_inches="tight")
 
     console.print(f"[green]Written everything to {output_dir}")

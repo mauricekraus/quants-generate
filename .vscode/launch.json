@@ -19,7 +19,7 @@
             "cwd": "${workspaceFolder}",
             "module": "generate",
             "console": "integratedTerminal",
-            "args": "generate-motion-stmc --dataset-path /workspaces/tsqa-pipeline-v2/dataset-folder"
+            "args": "generate-motion-stmc --dataset-path /workspaces/tsqa-pipeline-v2/datasets-debug/manual"
         },
         {
             "name": "Python Debugger: Animate Motion",
@@ -28,7 +28,7 @@
             "cwd": "${workspaceFolder}",
             "module": "generate",
             "console": "integratedTerminal",
-            "args": "render-stmc --dataset-path /workspaces/tsqa-pipeline-v2/dataset-folder"
+            "args": "render-stmc --dataset-path /workspaces/tsqa-pipeline-v2/datasets-debug/manual"
         },
         {
             "name": "Python Debugger: Current File with Arguments",

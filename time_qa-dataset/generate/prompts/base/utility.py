@@ -51,7 +51,7 @@ def read_actions(path) -> np.ndarray:
 
 template_dir = (Path(__file__).parents[2] / "prompts").resolve()
 # read actions from txt file
-all_actions = read_actions(template_dir / "base" / "list_of_actions_upper_body.txt")
+all_actions = read_actions(template_dir / "base" / "list_of_actions.txt")
 # create generic answer templates
 prompt_templates = read_inputs(template_dir / "prompt_templates" / "generic.txt")
 prompt_templates_first = read_inputs(template_dir / "prompt_templates" / "first.txt")

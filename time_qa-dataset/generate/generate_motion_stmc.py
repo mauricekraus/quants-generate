@@ -75,8 +75,10 @@ def generate_motion(
         SMPLHVariant, typer.Option(case_sensitive=False, help="The style of the SMPL-H model to use.")
     ] = SMPLHVariant.neutral,
     batch_size: int = typer.Option(
-        256,
-        help="How many instances to process in parallel in the diffusion model.",
+        64, help="How many instances to process in parallel in the diffusion model."
+    ),
+    save_vertices: bool = typer.Option(
+        True, help="This takes a lot of space, but is needed for the animation."
     ),
 ):
     # Share access to the console between all threads
@@ -161,7 +163,10 @@ def generate_motion(
                         "smplrifke", data=data_results.rifke_feats[i], compression="gzip"
                     )
                     hdf5_file.create_dataset("joints", data=data_results.joints[i], compression="gzip")
-                    hdf5_file.create_dataset("vertices", data=data_results.vertices[i], compression="gzip")
+                    if save_vertices:
+                        hdf5_file.create_dataset(
+                            "vertices", data=data_results.vertices[i], compression="gzip"
+                        )
                     smpl_group = hdf5_file.create_group("smpl")
                     for key, value in data_results.smpl[i].items():
                         match key:
