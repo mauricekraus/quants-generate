@@ -105,7 +105,7 @@ def generate(
     }
     index = 0
     try:
-        with Progress(expand=True, speed_estimate_period=2, console=console) as progress:
+        with Progress(expand=True, speed_estimate_period=5, console=console) as progress:
             sampling_task = progress.add_task("[yellow]Sampling...", total=num_samples)
 
             attempts = 0

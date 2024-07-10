@@ -68,7 +68,7 @@ def generate_motion(
     only_data_id: Optional[int] = None,
     gpu_id: int = typer.Option(0, help="If a GPU is available, use this GPU for the diffusion model."),
     seed: int = typer.Option(
-        0,
+        1,
         help="Seed to use for the random number generator. A seed of -1 means to use the default seed.",
     ),
     smplh_variant: Annotated[

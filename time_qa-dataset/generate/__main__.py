@@ -1,9 +1,9 @@
 from typer import Typer
 
+from .animate_stmc import animate_motion
+from .generate_motion_stmc import generate_motion
 from .prompts import generate as generate_prompts
 from .render_priormdm import plot_example
-from .generate_motion_stmc import generate_motion
-from .animate_stmc import animate_motion
 
 app = Typer()
 app.command("prompts")(generate_prompts)
