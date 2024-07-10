@@ -14,7 +14,7 @@ Can we conclude that the person is involved in exactly {number} separate actions
 Is the statement accurate that the individual is performing exactly {number} distinct actions within the time range starting from {time1} and ending at {time2}?
 Is it correct to state that the person is involved in exactly {number} activities during the time span of {time1} to {time2}?
 Is it correct to state that the person is involved in precisely {number} activities during the period of {time1} to {time2}?
-Did the person perform {number} different actions between exactly {time1} and {time2}?
+Did the person perform exactly {number} different actions between {time1} and {time2}?
 Did the person engage in precisely {number} distinct actions during the specified time frame from {time1} and {time2}?
 Can we confirm that the individual participated in exactly {number} activities from {time1} to {time2}?
 Is it true that the person carried out exactly {number} different activities within the given timeframe (from {time1} to {time2})?
