@@ -32,6 +32,24 @@ def check_dataset_path(ctx: typer.Context, dataset_path: Path):
     return dataset_path.absolute()
 
 
+def check_only_ids_from_path(ctx: typer.Context, only_ids_from: Path | None) -> Path | None:
+    if only_ids_from is None:
+        return None
+
+    only_ids_from = only_ids_from.absolute()
+
+    if not only_ids_from.exists():
+        raise typer.BadParameter(f"File {only_ids_from} does not exist.")
+
+    if not only_ids_from.is_file():
+        raise typer.BadParameter(f"{only_ids_from} is not a file.")
+
+    if ctx.params.get("only_data_id", None) is not None:
+        raise typer.BadParameter("Cannot use --only-ids-from and --only-data-id together.")
+
+    return only_ids_from
+
+
 def animate_motion(
     dataset_path: Path = typer.Option(
         help=(
@@ -41,7 +59,14 @@ def animate_motion(
         ),
         callback=check_dataset_path,
     ),
-    only_data_id: Optional[int] = None,
+    only_data_id: Optional[int] = typer.Option(
+        None, help="Only render the instance with this ID. Mutually exclusive with --only-ids-from."
+    ),
+    only_ids_from: Optional[Path] = typer.Option(
+        None,
+        help="Only render the instances listed in this file. Mutually exclusive with --only-data-id.",
+        callback=check_only_ids_from_path,
+    ),
     n_parallel: int = typer.Option(
         1, help="Use carefully. The process is CPU hungry and already parallelizes some rendering."
     ),
@@ -55,7 +80,18 @@ def animate_motion(
     all_instance_files.sort()
 
     if only_data_id is not None:
-        all_instance_files = [all_instance_files[only_data_id]]
+        only_ids = {only_data_id}
+    elif only_ids_from is not None:
+        only_ids = {int(element) for element in only_ids_from.read_text().splitlines()}
+    else:
+        only_ids = None
+
+    if only_ids is not None:
+        all_instance_files = [
+            instance_path
+            for instance_path in all_instance_files
+            if int(instance_path.parent.name) in only_ids
+        ]
 
     missing_instances = [
         instance_path
