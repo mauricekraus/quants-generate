@@ -55,6 +55,7 @@ You should commit/backup your files before running the following commands.
 - Count the number of lines in all question template `.txt`-files: `find generate/prompts/qna_type/ -type f -name "*.txt" -exec wc -l {} \; | sort -k1,1n`
 - Remove duplicates from all template `.txt`-files: `find generate/prompts -type f -name "*.txt" -exec sh -c 'awk "!seen[\$0]++" {} > temp && mv temp {}' \;`
 - Remove trailing whitespace from all template `.txt`-files: `find generate/prompts -type f -name "*.txt" -exec sed -i 's/[ \t]*$//' {} \;`
+- To convert all videos from MP4 to GIF and add timestamps, run `for file in videos/*; do export VID_FULL=${file##*/}; export VID=${VID_FULL%.mp4}; ffmpeg -i videos/$VID.mp4 -vf "fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf:expansion=normal: text='%{pts \\: hms}': fontcolor=white:fontsize=18: x=(w-text_w)/2: y=h-th-10: box=1: boxcolor=black: boxborderw=5: line_spacing=32" -loop 0 videos-gifs/$VID.gif ; done`.
 
 ### Simplified Dataset Variant
 

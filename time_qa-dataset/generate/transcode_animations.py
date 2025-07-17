@@ -37,7 +37,7 @@ def transcode_animations(
     missing_instances = [f for f in all_instance_files if not (f.parent / file_out).exists()]
 
     console.print(
-        f"Missing {len(all_instance_files)} instances ({len(missing_instances) * 100 / len(all_instance_files):.2f}%)"
+        f"Missing {len(missing_instances)} instances ({len(missing_instances) * 100 / len(all_instance_files):.2f}%)"
     )
 
     if not missing_instances:
@@ -61,10 +61,14 @@ def transcode_animations(
             cwd=video_in.parent,
         )
 
-    with ThreadPool(processes=n_parallel) as pool:
-        for _ in track(
-            pool.imap_unordered(process_single, missing_instances),
-            total=len(missing_instances),
-            console=console,
-        ):
-            pass
+    try:
+        with ThreadPool(processes=n_parallel) as pool:
+            for _ in track(
+                pool.imap_unordered(process_single, missing_instances),
+                total=len(missing_instances),
+                console=console,
+            ):
+                pass
+
+    except KeyboardInterrupt:
+        console.print("Interrupted by user. Some videos may be corrupted (for example, by being too short).")

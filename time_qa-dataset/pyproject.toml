@@ -22,6 +22,7 @@ dependencies = [
     "rich",
     "numpy",
     "matplotlib",
+    "seaborn",
     "typer",
     "datasets",
     "h5py",
