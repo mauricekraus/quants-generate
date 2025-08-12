@@ -164,7 +164,7 @@ cython_debug/
 time_qa-dataset/notebooks/*.pkl
 time_qa-dataset/notebooks/*.pdf
 
-generated*/**
+generated*
 
 # Google token
 *.json
