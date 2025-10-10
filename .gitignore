@@ -161,8 +161,8 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-time_qa-dataset/notebooks/*.pkl
-time_qa-dataset/notebooks/*.pdf
+quants/notebooks/*.pkl
+quants/notebooks/*.pdf
 
 generated*
 

@@ -6,7 +6,7 @@
     "dockerfile": "../.docker/Dockerfile",
     "context": "..",
     "args": {
-      "COMPOSE_PROJ_NAME": "tsqa_pipeline_v2",
+      "COMPOSE_PROJ_NAME": "quants-generate",
       "KIND": "3.10"
     }
   },
@@ -15,7 +15,7 @@
     {"source": "/storage-01/common-ts/deps", "target": "/workspaces/tsqa-pipeline-v2/stmc/deps", "type": "bind"},
     {"source": "/storage-01/common-ts/models", "target": "/workspaces/tsqa-pipeline-v2/stmc/pretrained_models", "type": "bind"}
   ],
-  "postCreateCommand": "python -m pip install -e time_qa-dataset[dev]",
+  "postCreateCommand": "python -m pip install -e quants[dev]",
   "remoteUser": "root", // More info: https://aka.ms/dev-containers-non-root
   "customizations": {
     "vscode": {
@@ -32,7 +32,7 @@
   },
   "runArgs": [
     "--gpus",
-    "\"device=13,14,15\"",
+    "\"device=00,01\"",
     "--shm-size",
     "50G"
   ]

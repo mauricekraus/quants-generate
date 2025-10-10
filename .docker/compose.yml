@@ -1,5 +1,5 @@
 services:
-  tsqa_pipeline_v2:
+  quants_generate:
     build:
       args:
         - COMPOSE_PROJ_NAME=${COMPOSE_PROJ_NAME}

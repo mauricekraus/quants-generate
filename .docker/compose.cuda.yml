@@ -1,5 +1,5 @@
 services:
-  tsqa_pipeline_v2:
+  quants_generate:
     deploy:
       resources:
         reservations:

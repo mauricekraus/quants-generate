@@ -1,10 +1,14 @@
-# TimeQA Dataset
+#  QuAnTS: Question Answering on Time Series – Dataset Generation
+
 ![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)
+
+[![Dataset on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/dasyd/quants)
 
 This repository holds the code for generating the multimodal QuAnTS dataset, comprised of time series of human activities and textual questions and answers.
 The purpose of the generated dataset is to lay the groundwork for a system that can answer questions based on time series data by examining how to produce a synthetic text and time series dataset that corresponds to real-world activities.
 Question and answer pairs are generated automatically from predefined question categories.
-Further information regarding the question categories can be found in the corresponding paper (*To be published*).
+
+Further information regarding the question categories can be found in the corresponding paper: *To be published*
 
 ## Usage of this repository
 
@@ -15,17 +19,21 @@ Use git to clone this repository:
 git clone https://github.com/mauricekraus/quants-generate.git
 ```
 
-The codebase is written in Python. Run these commands to install the dependencies and the library itself.
+The codebase is written in Python.
+Run the following commands to install the dependencies and the library itself (assuming you have Python 3.10+ and pip installed).
+You also need `ffmpeg` for video conversion.
+The dataset generation commands assume you are in the `quants/` folder.
+
 ```shell
 apt install ffmpeg
-pip install -e .[dev]
+pip install -e quants[dev]
 ```
 
-This repository also provides a [devcontainer](https://containers.dev/) for easy experimentation.
+This repository also provides a Docker image and a [devcontainer](https://containers.dev/) for easy experimentation.
 
 ### Running the prompt generation
 
-To execute the code, run `python -m generate prompts --num-samples 1000`. This will generate a new folder (by default `generate_dataset/`) containing JSON files containing a prompt sequence and the matching question and answer pairs. The program will print the first few instances as tables to the console.
+To execute the code, run `python -m generate prompts --num-samples 1000`. This will generate a new folder (by default `generated_dataset/`) containing JSON files containing a prompt sequence and the matching question and answer pairs. The program will print the first few instances as tables to the console.
 
 To adjust the parameters of the generation process, run the same code with `--help`.
 
@@ -58,7 +66,7 @@ You should commit/backup your files before running the following commands.
 
 ### Simplified Dataset Variant
 
-Set the `question_type_distribution` to `[1, 0, 0, 0, 0, 0, 1, 0, 0, 0]` (only `AfterQuestion` and `ActionCountQuestion`).
+Set the `question_type_distribution` to `[1, 0, 0, 0, 0, 0, 1, 0, 0, 0]` (e.g., for only generating `AfterQuestion` and `ActionCountQuestion`).
 Then run `python -m generate prompts --answer-types binary --num-samples 500`
 
 ## Possible future improvements
@@ -70,3 +78,10 @@ Then run `python -m generate prompts --answer-types binary --num-samples 500`
 - Many generators correctly handle synonyms, but some do not because this is not present in the current set of possible actions. Before adding synonyms, checking if each generator handles them correctly would be necessary.
 
 QuAnTS is inspired by the style of [ScienceQA](https://huggingface.co/datasets/derek-thomas/ScienceQA?row=1).
+
+## License and Citation
+
+This repository is licensed under the MIT License.
+See the [LICENSE](LICENSE) file for details.
+
+For using the dataset and citing it, please see [the huggingface dataset repository](https://huggingface.co/datasets/dasyd/quants#licensing-citation-and-acknowledgments).
