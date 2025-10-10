@@ -87,9 +87,7 @@ def generate(
     ),
     max_attempts: int = 1000,
 ):
-    """
-    Generate a custom dataset based on the provided parameters.
-    """
+    """Generate a custom time series question-answering dataset (textual components only)."""
 
     typer.echo(f"Generating dataset with {num_samples} samples...")
 

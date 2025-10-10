@@ -27,6 +27,8 @@ def transcode_animations(
     file_in: str = "render_smpl.mp4",
     file_out: str = "render_smpl_compressed.mp4",
 ):
+    """Transcode the MP4 animations to a much more compressed format."""
+
     # Share access to the console between all threads
     console = Console()
 

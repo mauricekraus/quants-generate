@@ -79,6 +79,8 @@ def generate_motion(
         True, help="This takes a lot of space, but is needed for the animation."
     ),
 ):
+    """Run STMC to obtain the motion trajectories via diffusion."""
+
     # Share access to the console between all threads
     console = Console()
 
