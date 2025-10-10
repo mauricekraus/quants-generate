@@ -1,13 +1,10 @@
 # TimeQA Dataset
 ![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)
 
-This repository holds the code for generating a multimodal dataset comprised of time series of human activities and textual questions and answers, as well as the category for the questions and, in binary cases, the assigned label (True or False) for the category. The purpose of the generated dataset is to lay the groundwork for a system that can answer questions based on time series data by examining how to produce a synthetic text times series dataset that corresponds to real-world activities. The generated dataset can then be used to train and test this system. Question and answer pairs are generated automatically in paraphrased versions and clearly defined question categories. Further information regarding the question categories can be found in the corresponding report.
-
-## Information about the dataset
-
-The file `generate/prompts/base/list_of_actions_evaluated.txt` contains all possible actions.
-Some actions are treated as synonyms since they are indistinguishable in the generated movements, like `moving forward` and `walking`.
-Such actions are thus grouped in a single line and separated by commas.
+This repository holds the code for generating the multimodal QuAnTS dataset, comprised of time series of human activities and textual questions and answers.
+The purpose of the generated dataset is to lay the groundwork for a system that can answer questions based on time series data by examining how to produce a synthetic text and time series dataset that corresponds to real-world activities.
+Question and answer pairs are generated automatically from predefined question categories.
+Further information regarding the question categories can be found in the corresponding paper (*To be published*).
 
 ## Usage of this repository
 
@@ -15,10 +12,10 @@ Such actions are thus grouped in a single line and separated by commas.
 
 Use git to clone this repository:
 ```shell
-git clone https://github.com/felixdivo/time_qa-dataset.git
+git clone https://github.com/mauricekraus/quants-generate.git
 ```
 
-The codebase is written in Python. Run these commands to install the dependencies and library itself.
+The codebase is written in Python. Run these commands to install the dependencies and the library itself.
 ```shell
 apt install ffmpeg
 pip install -e .[dev]
@@ -34,7 +31,9 @@ To adjust the parameters of the generation process, run the same code with `--he
 
 ### Changing the generation code
 
-The code is in the folder `generate/prompts/`, which contains three sub-folders. The folder `answers/` holds the generated answer templates, and the `qna_type/` folder has the question templates and the code for each question category in the corresponding subfolders. The `base/` contains data types and utility helpers with help functions and lists of possible actions used to generate the dataset.
+The file `quants/generate/prompts/base/list_of_actions_evaluated.txt` contains all possible actions.
+
+The code is in the folder `quants/generate/prompts/`, which contains three sub-folders. The folder `answers/` holds the generated answer templates, and the `qna_type/` folder has the question templates and the code for each question category in the corresponding subfolders. The `base/` contains data types and utility helpers with help functions and lists of possible actions used to generate the dataset.
 
 The text files are the templates for the generated questions, answers, actions, and descriptions for the prompts. Values like `{activity}` and `{time}` are used as placeholders and will be filled in the code.
 Note that the available placeholders are specific to each template.
@@ -44,7 +43,7 @@ Furthermore, duplicates are filtered out.
 ### Visualizing the dataset
 
 To instance of the dataset, run `python -m generate render --help` to see the available options.
-By default, it loads the data from huggingface. Log in with `huggingface-cli login` or provide a token as an environment variable or argument.
+By default, it loads the data from HuggingFace. Log in with `huggingface-cli login` or provide a token as an environment variable or argument.
 Alternatively, you can generate from a local folder by providing `--input-path my-own-quants-dataset/data`.
 To run it for multiple at once, run something like `for i in {0..10}; do python -m generate render --idx $i --no-ask-for-token; done`.
 
@@ -68,24 +67,6 @@ Then run `python -m generate prompts --answer-types binary --num-samples 500`
 - The consistency of the generated prompts could be improved by using a common tense (present or past). However, as long as each prompt is consistent, the generated dataset should be fine and may benefit from the diversity. That is the current approach.
   However, questions and answers are generated separately, so there is currently no guarantee that the tense is consistent between them.
 - Allow for multiple answers per question. This would be useful for questions like `"What is an activity following some time after the activity X?"` (`after_open`).
-- Many generators correctly handle synonyms, but some do not because this is not present in the current set of possible actions.
+- Many generators correctly handle synonyms, but some do not because this is not present in the current set of possible actions. Before adding synonyms, checking if each generator handles them correctly would be necessary.
 
-Before adding synonyms, checking if each generator handles them correctly would be good.
-
-## Huggingface Dataset
-
-Version 2 roughly follows the style of [ScienceQA](https://huggingface.co/datasets/derek-thomas/ScienceQA?row=1).
-
-### Tagging
-
-Hints:
-```shell
-# Make sure you are logged in. If not, run
-huggingface-cli login
-
-# Show all
-huggingface-cli tag --repo-type dataset -l dasyd/time-qa
-
-# Add the tag
-huggingface-cli tag --repo-type dataset dasyd/time-qa v1.0.1
-```
+QuAnTS is inspired by the style of [ScienceQA](https://huggingface.co/datasets/derek-thomas/ScienceQA?row=1).
