@@ -10,7 +10,7 @@ Question and answer pairs are generated automatically from predefined question c
 
 Further information regarding the question categories can be found in the corresponding paper: *To be published*
 
-![Q: "What is the person doing first?", A: "They are waving.", Q: "How many times are they jumping after that?", A: "..."](doc/intro-chat.png "Example chat motivating time series question answering")
+<img src="doc/intro-chat.png" alt="Example chat motivating time series question answering: Q: 'What is the person doing first?', A: 'They are waving.', Q: 'How many times are they jumping after that?', A: '...'" width="40%"/>
 
 ## Usage of this repository
 
