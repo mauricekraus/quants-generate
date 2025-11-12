@@ -1,6 +1,7 @@
 #  QuAnTS: Question Answering on Time Series – Dataset Generation
 
 ![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)
+[![arXiv](https://img.shields.io/badge/arXiv-2511.05124-b31b1b.svg)](https://arxiv.org/abs/2511.05124)
 
 [![Dataset on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/dasyd/quants)
 
@@ -108,4 +109,4 @@ This repository is licensed under the MIT License.
 See the [LICENSE](LICENSE) file for details.
 This repository contains a copy of [the STMC codebase](https://github.com/nv-tlabs/stmc).
 
-For using the dataset and citing it, please see [the huggingface dataset repository](https://huggingface.co/datasets/dasyd/quants#licensing-citation-and-acknowledgments).
+For using the dataset and citing it, please refer to [the HuggingFace dataset repository](https://huggingface.co/datasets/dasyd/quants#licensing-citation-and-acknowledgments) (at the bottom).
