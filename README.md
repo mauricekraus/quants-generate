@@ -80,7 +80,7 @@ Please use `python -m generate render-stmc --help` to see the available options.
 ### Visualizing the dataset
 
 To instance of the dataset, run `python -m generate render-stmc --help` to see the available options.
-By default, it loads the data from HuggingFace. Log in with `huggingface-cli login` or provide a token as an environment variable or argument.
+By default, it loads the data from HuggingFace. Log in with `hf auth login` or provide a token as an environment variable or argument.
 Alternatively, you can generate from a local folder by providing `--input-path my-own-quants-dataset/data`.
 To run it for multiple at once, run something like `for i in {0..10}; do python -m generate render --idx $i --no-ask-for-token; done`.
 
