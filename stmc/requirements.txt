@@ -21,7 +21,7 @@ certifi==2022.12.7
 cffi==1.16.0
 charset-normalizer==2.1.1
 click==8.1.7
-clip @ git+https://github.com/openai/CLIP.git@a1d071733d7111c9c014f024669f959182114e33
+# clip @ git+https://github.com/openai/CLIP.git@a1d071733d7111c9c014f024669f959182114e33  # Manually installed in Dockerfile
 cloudpathlib==0.16.0
 cmake==3.25.0
 colorama==0.4.6
@@ -190,7 +190,4 @@ weasel==0.3.3
 websockets==11.0.3
 yapf==0.40.2
 yarl==1.9.2
-zipp==3.17.0
-
-
-chumpy @ git+https://github.com/mauricekraus/chumpy.git 
+zipp==3.17.0 
