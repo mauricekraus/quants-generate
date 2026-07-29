@@ -41,6 +41,7 @@ dev = [
   "ruff",
   "mypy",
   "tables",
+  "scipy",
   "ipykernel",
   "plotly",
   "nbformat",

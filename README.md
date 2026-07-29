@@ -58,7 +58,7 @@ To adjust the parameters of the generation process, run the same code with `--he
 
 #### Changing the generation code
 
-The file `quants/generate/prompts/base/list_of_actions_evaluated.txt` contains all possible actions.
+The file `quants/generate/prompts/base/list_of_actions.txt` contains all possible actions.
 
 The code is in the folder `quants/generate/prompts/`, which contains three sub-folders. The folder `answers/` holds the generated answer templates, and the `qna_type/` folder has the question templates and the code for each question category in the corresponding subfolders. The `base/` contains data types and utility helpers with help functions and lists of possible actions used to generate the dataset.
 
@@ -84,6 +84,19 @@ To instance of the dataset, run `python -m generate render-stmc --help` to see t
 By default, it loads the data from HuggingFace. Log in with `hf auth login` or provide a token as an environment variable or argument.
 Alternatively, you can generate from a local folder by providing `--input-path my-own-quants-dataset/data`.
 To run it for multiple at once, run something like `for i in {0..10}; do python -m generate render --idx $i --no-ask-for-token; done`.
+
+### Analyzing the dataset
+
+The `quants/notebooks/` folder holds standalone analysis notebooks; each is self-contained and expects
+a generated dataset folder next to the repository root.
+
+- `dataset-statistics.ipynb` — question, answer, and length distributions.
+- `assess-context-similarities.ipynb` — how redundant the generated contexts are, at both the signal
+  level (near-duplicate trajectories, via an exact k-NN sweep against a phase-randomized null) and the
+  label level (samples sharing a 4-action sequence, including collisions that cross the train/val/test
+  boundary). It caches intermediate results to `<dataset>/similarity/`, so re-cutting the duplication
+  threshold does not recompute the neighbour search.
+- `make-hf-dataset.ipynb` — assemble and push the HuggingFace dataset.
 
 ### Development tricks
 
