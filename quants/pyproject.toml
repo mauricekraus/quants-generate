@@ -6,7 +6,8 @@ build-backend = "setuptools.build_meta"
 name = "generate-quants"
 version = "1.0.0"
 authors = [
-  { name = "Various" },
+  { name = "Felix Divo", email = "felix.divo@tu-darmstadt.de" },
+  { name = "Maurice Kraus", email = "maurice.kraus@tu-darmstadt.de" }
 ]
 description = "Generation code for the QuAnTS dataset."
 readme = "README.md"

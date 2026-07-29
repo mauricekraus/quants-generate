@@ -32,7 +32,7 @@
 		"--shm-size=100G",
     "--memory=100g",
     "--memory-swap=100g",
-		"--cpus=64",
+		// "--cpus=64",
 		"--device", "nvidia.com/gpu=1",
 		// "--network", "shared_net"
   ]
