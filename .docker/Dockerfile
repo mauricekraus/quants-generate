@@ -31,4 +31,6 @@ RUN pip install "setuptools<81" wheel && \
 
 ENV PYTHONPATH=$PYTHONPATH:src
 
+ENV HF_HOME=/workspaces/$PROJECT_NAME/.cache/huggingface
+
 CMD zsh
