@@ -87,15 +87,16 @@ To run it for multiple at once, run something like `for i in {0..10}; do python 
 
 ### Analyzing the dataset
 
-The `quants/notebooks/` folder holds standalone analysis notebooks; each is self-contained and expects
-a generated dataset folder next to the repository root.
+The `quants/notebooks/` folder holds standalone analysis notebooks. Log in with `hf auth login` first,
+since they load the published dataset from HuggingFace.
 
 - `dataset-statistics.ipynb` — question, answer, and length distributions.
-- `assess-context-similarities.ipynb` — how redundant the generated contexts are, at both the signal
+- `assess-context-similarities.ipynb` — how redundant the published contexts are, at both the signal
   level (near-duplicate trajectories, via an exact k-NN sweep against a phase-randomized null) and the
   label level (samples sharing a 4-action sequence, including collisions that cross the train/val/test
-  boundary). It caches intermediate results to `<dataset>/similarity/`, so re-cutting the duplication
-  threshold does not recompute the neighbour search.
+  boundary). The first run downloads the dataset and caches the deduplicated contexts and pair scores
+  to `quants/notebooks/similarity/`, so re-cutting the duplication threshold does not repeat the
+  download or the neighbour search.
 - `make-hf-dataset.ipynb` — assemble and push the HuggingFace dataset.
 
 ### Development tricks
