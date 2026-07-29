@@ -94,9 +94,9 @@ since they load the published dataset from HuggingFace.
 - `assess-context-similarities.ipynb` — how redundant the published contexts are, at both the signal
   level (near-duplicate trajectories, via an exact k-NN sweep against a phase-randomized null) and the
   label level (samples sharing a 4-action sequence, including collisions that cross the train/val/test
-  boundary). The first run downloads the dataset and caches the deduplicated contexts and pair scores
-  to `quants/notebooks/similarity/`, so re-cutting the duplication threshold does not repeat the
-  download or the neighbour search.
+  boundary). Requires a CUDA GPU. Pair scores and sweep curves are cached to
+  `quants/notebooks/similarity/`, so re-cutting the duplication threshold does not repeat the
+  neighbour search.
 - `make-hf-dataset.ipynb` — assemble and push the HuggingFace dataset.
 
 ### Development tricks
