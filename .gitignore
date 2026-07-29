@@ -163,6 +163,7 @@ cython_debug/
 
 quants/notebooks/*.pkl
 quants/notebooks/*.pdf
+quants/notebooks/similarity/
 
 generated*
 
