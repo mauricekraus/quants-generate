@@ -91,12 +91,14 @@ The `quants/notebooks/` folder holds standalone analysis notebooks. Log in with 
 since they load the published dataset from HuggingFace.
 
 - `dataset-statistics.ipynb` — question, answer, and length distributions.
-- `assess-context-similarities.ipynb` — how redundant the published contexts are, at both the signal
-  level (near-duplicate trajectories, via an exact k-NN sweep against a phase-randomized null) and the
-  label level (samples sharing a 4-action sequence, including collisions that cross the train/val/test
-  boundary). Requires a CUDA GPU. Pair scores and sweep curves are cached to
-  `quants/notebooks/similarity/`, so re-cutting the duplication threshold does not repeat the
-  neighbour search.
+- `assess-dataset-duplication.ipynb` — how redundant the published dataset is, on three axes: the
+  **signal** level (near-duplicate trajectories, from an exhaustive scan of all 450 million sample
+  pairs against a phase-randomized null), the **label** level (samples sharing a 4-action sequence),
+  and the **text** level (duplicate questions, open answers, question+answer, and
+  question+answer+action-sequence, broken down by answer type). A closing section combines them:
+  rows that are surplus on every axis at once. Each axis also reports collisions that cross the
+  train/val/test boundary. Requires a CUDA GPU and takes about 20 minutes; pair scores and sweep
+  curves are written to `quants/notebooks/similarity/` for re-analysis without re-running the scan.
 - `make-hf-dataset.ipynb` — assemble and push the HuggingFace dataset.
 
 ### Development tricks
