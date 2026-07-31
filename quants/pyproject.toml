@@ -46,6 +46,11 @@ dev = [
   "plotly",
   "nbformat",
   "huggingface_hub[cli]",
+  # Used by the human-study notebooks to create and read the Google Forms
+  "google-api-python-client",
+  "google-auth-httplib2",
+  "google-auth-oauthlib",
+  "torchmetrics",
 ]
 
 [tool.ruff]
