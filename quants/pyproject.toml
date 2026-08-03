@@ -6,7 +6,8 @@ build-backend = "setuptools.build_meta"
 name = "generate-quants"
 version = "1.0.0"
 authors = [
-  { name = "Various" },
+  { name = "Felix Divo", email = "felix.divo@tu-darmstadt.de" },
+  { name = "Maurice Kraus", email = "maurice.kraus@tu-darmstadt.de" }
 ]
 description = "Generation code for the QuAnTS dataset."
 readme = "README.md"
@@ -23,7 +24,7 @@ dependencies = [
     "numpy",
     "matplotlib",
     "seaborn",
-    "typer",
+    "typer>=0.12",
     "datasets",
     "h5py",
     "rtpt",
@@ -40,10 +41,16 @@ dev = [
   "ruff",
   "mypy",
   "tables",
+  "scipy",
   "ipykernel",
   "plotly",
   "nbformat",
   "huggingface_hub[cli]",
+  # Used by the human-study notebooks to create and read the Google Forms
+  "google-api-python-client",
+  "google-auth-httplib2",
+  "google-auth-oauthlib",
+  "torchmetrics",
 ]
 
 [tool.ruff]

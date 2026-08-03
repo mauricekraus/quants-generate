@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-  "name": "tsqa_pipeline_v2",
+  "name": "quants-generate",
   "build": {
     "dockerfile": "../.docker/Dockerfile",
     "context": "..",
@@ -11,29 +11,29 @@
     }
   },
   "mounts": [
-    {"source": "/storage-01/common-ts/datasets/AMASS", "target": "/workspaces/tsqa-pipeline-v2/stmc/datasets", "type": "bind"},
-    {"source": "/storage-01/common-ts/deps", "target": "/workspaces/tsqa-pipeline-v2/stmc/deps", "type": "bind"},
-    {"source": "/storage-01/common-ts/models", "target": "/workspaces/tsqa-pipeline-v2/stmc/pretrained_models", "type": "bind"}
+    {"source": "/storage-01/common-ts/datasets/AMASS", "target": "/workspaces/quants-generate/stmc/datasets", "type": "bind"},
+    {"source": "/storage-01/common-ts/deps", "target": "/workspaces/quants-generate/stmc/deps", "type": "bind"},
+    {"source": "/storage-01/common-ts/models", "target": "/workspaces/quants-generate/stmc/pretrained_models", "type": "bind"}
   ],
-  "postCreateCommand": "python -m pip install -e quants[dev]",
-  "remoteUser": "root", // More info: https://aka.ms/dev-containers-non-root
+  "onCreateCommand": "python -m pip install -e quants[dev]",
+  "remoteUser": "root",
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-python.python",
-        "tamasfe.even-better-toml",
-        "github.copilot",
-        "genieai.chatgpt-vscode",
-        "ms-toolsai.jupyter",
-        "mikestead.dotenv",
-        "charliermarsh.ruff"
+				"ms-python.python",
+				"tamasfe.even-better-toml",
+				"ms-toolsai.jupyter",
+				"charliermarsh.ruff",
+				"ms-toolsai.datawrangler"
       ]
     }
   },
   "runArgs": [
-    "--gpus",
-    "\"device=00,01\"",
-    "--shm-size",
-    "50G"
+		"--shm-size=100G",
+    "--memory=100g",
+    "--memory-swap=100g",
+		// "--cpus=64",
+		"--device", "nvidia.com/gpu=1",
+		// "--network", "shared_net"
   ]
 }

@@ -2,7 +2,7 @@
 ARG KIND=3.10
 FROM mkrausio/ml_research:torch-v2.0.1-3.10-cuda-11.8.0
 
-ARG COMPOSE_PROJ_NAME="quants_generate"
+ARG COMPOSE_PROJ_NAME="quants-generate"
 
 ENV PROJECT_NAME=${COMPOSE_PROJ_NAME}
 RUN echo ${COMPOSE_PROJ_NAME}/$PROJECT_NAME
@@ -30,5 +30,7 @@ RUN pip install "setuptools<81" wheel && \
     "chumpy @ git+https://github.com/mauricekraus/chumpy.git"
 
 ENV PYTHONPATH=$PYTHONPATH:src
+
+ENV HF_HOME=/workspaces/$PROJECT_NAME/.cache/huggingface
 
 CMD zsh
