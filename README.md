@@ -11,7 +11,7 @@ Question and answer pairs are generated automatically from predefined question c
 
 Further information regarding the question categories can be found in the corresponding paper: *To be published*
 
-<img src="doc/intro-chat.png" alt="Example chat motivating time series question answering: Q: 'What is the person doing first?', A: 'They are waving.', Q: 'How many times are they jumping after that?', A: '...'" width="40%"/>
+<img src="docs/intro-chat.png" alt="Example chat motivating time series question answering: Q: 'What is the person doing first?', A: 'They are waving.', Q: 'How many times are they jumping after that?', A: '...'" width="40%"/>
 
 ## Usage of this repository
 
@@ -36,7 +36,7 @@ This repository also provides a Docker image and a [devcontainer](https://contai
 
 ### Overview
 
-![QuAnTS is generated in several steps: An action sequence is sampled ➀, where for each we sample five question and answer types ➁. For diversity, each of them is then instantiated from a sampled template ➂. The time series from the human motion diffusion ➃ is then combined with the QA-pair and auxiliary data ➄. Example QA pairs are shown below. Dice indicate randomized operations for dataset diversity.](doc/overview.png "Dataset generation overview")
+![QuAnTS is generated in several steps: An action sequence is sampled ➀, where for each we sample five question and answer types ➁. For diversity, each of them is then instantiated from a sampled template ➂. The time series from the human motion diffusion ➃ is then combined with the QA-pair and auxiliary data ➄. Example QA pairs are shown below. Dice indicate randomized operations for dataset diversity.](docs/overview.png "Dataset generation overview")
 
 
 Run `python -m generate --help` to get an overview of the available commands:
