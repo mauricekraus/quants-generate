@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="QuAnTS: Question Answering on Time Series">
+  <meta name="description" content="QuAnTS is a large-scale multimodal dataset for question answering on time series, pairing 30,000 human motion trajectories with 150,000 binary, multiple-choice, and open-ended question-answer pairs.">
+  <meta name="keywords" content="Time Series, Question Answering, Multimodal Dataset, Human Motion, TSQA, Benchmark, Motion Diffusion">
+  <meta name="author" content="Felix Divo, Maurice Kraus, Anh Q. Nguyen, Hao Xue, Imran Razzak, Flora D. Salim, Kristian Kersting, Devendra Singh Dhami">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Artificial Intelligence and Machine Learning">
+  <meta property="og:title" content="QuAnTS: Question Answering on Time Series">
+  <meta property="og:description" content="A challenging multimodal dataset for question answering on human motion time series: 150,000 QA pairs over 30,000 trajectories, with binary, multiple-choice, and open-ended answers, plus human reference performance.">
+  <meta property="og:url" content="https://mauricekraus.github.io/quants-generate/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/mauricekraus/quants-generate/main/docs/website/static/images/overview.png">
+  <meta property="og:image:alt" content="Overview of the QuAnTS dataset generation pipeline">
+  <meta property="article:author" content="Felix Divo">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Time Series">
+  <meta property="article:tag" content="Question Answering">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="QuAnTS: Question Answering on Time Series">
+  <meta name="citation_author" content="Divo, Felix">
+  <meta name="citation_author" content="Kraus, Maurice">
+  <meta name="citation_author" content="Nguyen, Anh Q.">
+  <meta name="citation_author" content="Xue, Hao">
+  <meta name="citation_author" content="Razzak, Imran">
+  <meta name="citation_author" content="Salim, Flora D.">
+  <meta name="citation_author" content="Kersting, Kristian">
+  <meta name="citation_author" content="Dhami, Devendra Singh">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2511.05124">
+  <meta name="citation_arxiv_id" content="2511.05124">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#1f4e79">
+  <meta name="msapplication-TileColor" content="#1f4e79">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>QuAnTS: Question Answering on Time Series - Divo, Kraus, Nguyen, Xue, Razzak, Salim, Kersting, and Dhami</title>
+  <link rel="canonical" href="https://mauricekraus.github.io/quants-generate/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
+
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "QuAnTS: Question Answering on Time Series",
+    "description": "QuAnTS is a large-scale, diverse dataset for question answering on time series, posing binary, multiple-choice, and open-ended questions about human motion trajectories.",
+    "author": [
+      {"@type": "Person", "name": "Felix Divo", "affiliation": {"@type": "Organization", "name": "TU Darmstadt"}},
+      {"@type": "Person", "name": "Maurice Kraus", "affiliation": {"@type": "Organization", "name": "TU Darmstadt"}},
+      {"@type": "Person", "name": "Anh Q. Nguyen", "affiliation": {"@type": "Organization", "name": "University of New South Wales"}},
+      {"@type": "Person", "name": "Hao Xue", "affiliation": {"@type": "Organization", "name": "Hong Kong University of Science and Technology (Guangzhou)"}},
+      {"@type": "Person", "name": "Imran Razzak", "affiliation": {"@type": "Organization", "name": "MBZUAI"}},
+      {"@type": "Person", "name": "Flora D. Salim", "affiliation": {"@type": "Organization", "name": "University of New South Wales"}},
+      {"@type": "Person", "name": "Kristian Kersting", "affiliation": {"@type": "Organization", "name": "TU Darmstadt"}},
+      {"@type": "Person", "name": "Devendra Singh Dhami", "affiliation": {"@type": "Organization", "name": "TU Eindhoven"}}
+    ],
+    "datePublished": "2025-11",
+    "url": "https://mauricekraus.github.io/quants-generate/",
+    "sameAs": "https://arxiv.org/abs/2511.05124",
+    "image": "https://raw.githubusercontent.com/mauricekraus/quants-generate/main/docs/website/static/images/overview.png",
+    "keywords": ["Time Series", "Multimodal Question Answering", "Dataset", "Human Motion"],
+    "abstract": "Text offers intuitive access to information. This can, in particular, complement the density of numerical time series, thereby allowing improved interactions with time series models to enhance accessibility and decision-making. While the creation of question-answering datasets and models has recently seen remarkable growth, most research focuses on question answering (QA) on vision and text, with time series receiving minute attention. To bridge this gap, we propose a challenging novel time series QA (TSQA) dataset, QuAnTS, for Question Answering on Time Series data. Specifically, we pose a wide variety of questions and answers about human motion in the form of tracked skeleton trajectories. We verify that the large-scale QuAnTS dataset is well-formed and comprehensive through extensive experiments. Thoroughly evaluating existing and newly proposed baselines then lays the groundwork for a deeper exploration of TSQA using QuAnTS. Additionally, we provide human performances as a key reference for gauging the practical usability of such models. We hope to encourage future research on interacting with time series models through text, enabling better decision-making and more transparent systems.",
+    "citation": "@article{divo2025quants, title={QuAnTS: Question Answering on Time Series}, author={Divo, Felix and Kraus, Maurice and Nguyen, Anh Q. and Xue, Hao and Razzak, Imran and Salim, Flora D. and Kersting, Kristian and Dhami, Devendra Singh}, journal={arXiv preprint arXiv:2511.05124}, year={2025}}",
+    "isAccessibleForFree": true,
+    "mainEntity": {
+      "@type": "Dataset",
+      "name": "QuAnTS",
+      "description": "150,000 question-answer pairs over 30,000 synthetic human motion trajectories of 320 time steps, each holding 3 coordinates for 24 joints.",
+      "url": "https://huggingface.co/datasets/dasyd/quants",
+      "identifier": "https://doi.org/10.57967/hf/6663",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "about": [
+      {"@type": "Thing", "name": "Time Series Question Answering"},
+      {"@type": "Thing", "name": "Human Motion"}
+    ]
+  }
+  </script>
+
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Artificial Intelligence and Machine Learning",
+    "url": "https://www.aiml.informatik.tu-darmstadt.de",
+    "logo": "https://www.aiml.informatik.tu-darmstadt.de/icons/logos/aimlCleanV2.svg",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- More Works Dropdown -->
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works by the Authors</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <a href="https://arxiv.org/abs/2410.16928" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>xLSTM-Mixer: Multivariate Time Series Forecasting by Mixing via Scalar Memories</h5>
+            <p>The time series backbone behind the xQA action encoder, mixing predictions across scalar memory states.</p>
+            <span class="work-venue">NeurIPS 2025</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://openreview.net/pdf?id=7SP3orvHPy" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Finding the Zeitgeist in Time Series Foundation Models</h5>
+            <p>An analysis of where today's time series foundation models stand.</p>
+            <span class="work-venue">ICLR 2026 Workshop on Time Series in the Age of Large Models (TSALM)</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://link.springer.com/chapter/10.1007/978-3-032-06109-6_28" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Right on Time: Revising Time Series Models by Constraining Their Explanations</h5>
+            <p>Steering time series models away from confounders by constraining what their explanations may attend to.</p>
+            <span class="work-venue">ECML PKDD 2025</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">QuAnTS: Question Answering on Time Series</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                Felix Divo<sup>1,*</sup>,
+              </span>
+              <span class="author-block">
+                Maurice Kraus<sup>1,*</sup>,
+              </span>
+              <span class="author-block">
+                Anh Q. Nguyen<sup>2</sup>,
+              </span>
+              <span class="author-block">
+                Hao Xue<sup>3</sup>,
+              </span>
+              <span class="author-block">
+                Imran Razzak<sup>4</sup>,
+              </span>
+              <span class="author-block">
+                Flora D. Salim<sup>2</sup>,
+              </span>
+              <span class="author-block">
+                Kristian Kersting<sup>1,5,6,7</sup>,
+              </span>
+              <span class="author-block">
+                Devendra Singh Dhami<sup>8</sup>
+              </span>
+            </div>
+            <div class="publication-affiliations">
+              <span class="author-block">
+                <sup>1</sup>AI &amp; ML Lab, TU Darmstadt
+                <br><sup>2</sup>University of New South Wales
+                <br><sup>3</sup>Hong Kong University of Science and Technology (Guangzhou)
+                <br><sup>4</sup>MBZUAI, Abu Dhabi
+                <br><sup>5</sup>Hessian Center for AI (hessian.AI)
+                <br><sup>6</sup>German Research Center for AI (DFKI), Darmstadt
+                <br><sup>7</sup>Centre for Cognitive Science, TU Darmstadt
+                <br><sup>8</sup>TU Eindhoven
+              </span>
+            </div>
+            <div class="eql-cntrb"><sup>*</sup>Authors contributed equally</div>
+            <div class="publication-venue">
+              Under Review at the
+              <a href="https://data.mlr.press/" target="_blank">Journal of Data-centric Machine Learning Research (DMLR)</a>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2511.05124" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://openreview.net/forum?id=bNCDElSOXB" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-open-access"></i>
+                    </span>
+                    <span>OpenReview</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/dasyd/quants" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/mauricekraus/quants-generate" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Generation Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <span class="button is-normal is-rounded is-dark is-placeholder" aria-disabled="true"
+                        title="The evaluation code will be released with the camera-ready version">
+                    <span class="icon">
+                      <i class="fas fa-code"></i>
+                    </span>
+                    <span>Evaluation Code (soon)</span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser figure -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/overview.png" alt="QuAnTS generation pipeline: an action sequence is sampled, question and answer types are drawn per sequence, each is instantiated from a template, and the human motion diffusion output is combined with the QA pair" loading="eager"/>
+        <h2 class="subtitle has-text-centered">
+          <strong>QuAnTS is generated in five steps:</strong>
+          An action sequence is sampled &#9312;, and for each we sample five question and answer types &#9313;.
+          For diversity, each of them is then instantiated from a sampled template &#9314;.
+          The time series from the human motion diffusion &#9315; is finally combined with the QA pair and auxiliary data &#9316;.
+          Dice indicate randomized operations for dataset diversity.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser figure -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Text offers intuitive access to information.
+              This can, in particular, complement the density of numerical time series, thereby allowing improved interactions with time series models to enhance accessibility and decision-making.
+              While the creation of question-answering datasets and models has recently seen remarkable growth, most research focuses on question answering&nbsp;(QA) on vision and text, with time series receiving minute attention.
+              To bridge this gap, we propose a challenging novel time series QA&nbsp;(TSQA) dataset, QuAnTS, for <strong>Qu</strong>estion <strong>An</strong>swering on <strong>T</strong>ime <strong>S</strong>eries data.
+              Specifically, we pose a wide variety of questions and answers about human motion in the form of tracked skeleton trajectories.
+              We verify that the large-scale QuAnTS dataset is well-formed and comprehensive through extensive experiments.
+              Thoroughly evaluating existing and newly proposed baselines then lays the groundwork for a deeper exploration of TSQA using QuAnTS.
+              Additionally, we provide human performances as a key reference for gauging the practical usability of such models.
+              We hope to encourage future research on interacting with time series models through text, enabling better decision-making and more transparent systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- Data samples -->
+  <section class="section" id="samples">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Explore the Data</h2>
+      <div class="content has-text-centered section-lead">
+        <p>
+          Every QuAnTS sample is a 16-second human motion trajectory of four consecutive actions, paired with five
+          question&ndash;answer pairs. Models see the raw <strong>320 &times; 24 &times; 3</strong> numbers; the videos below are
+          renderings of exactly that signal, as shown to the participants of our human study.
+          Pick a sample from the test split:
+        </p>
+      </div>
+
+      <div class="sample-chips" role="tablist" aria-label="QuAnTS data samples">
+            <button class="sample-chip is-active" type="button" data-sample="27000" aria-controls="sample-27000" aria-selected="true" role="tab">#27000</button>
+            <button class="sample-chip" type="button" data-sample="27001" aria-controls="sample-27001" aria-selected="false" role="tab">#27001</button>
+            <button class="sample-chip" type="button" data-sample="27002" aria-controls="sample-27002" aria-selected="false" role="tab">#27002</button>
+            <button class="sample-chip" type="button" data-sample="27003" aria-controls="sample-27003" aria-selected="false" role="tab">#27003</button>
+            <button class="sample-chip" type="button" data-sample="27004" aria-controls="sample-27004" aria-selected="false" role="tab">#27004</button>
+            <button class="sample-chip" type="button" data-sample="27005" aria-controls="sample-27005" aria-selected="false" role="tab">#27005</button>
+      </div>
+
+      <div class="sample-panels">
+        <div class="sample-panel is-active" id="sample-27000" data-sample="27000" role="tabpanel">
+          <div class="sample-video">
+            <video src="static/videos/27000.mp4" poster="static/videos/27000.jpg" preload="metadata" autoplay muted loop playsinline controls
+                   aria-label="Rendered human motion of QuAnTS sample 27000"></video>
+            <p class="sample-meta">Sample #27000 &middot; test split &middot; 16 s &middot; 320 &times; 24 &times; 3 values</p>
+          </div>
+          <div class="sample-info">
+            <h3 class="sample-heading">Action sequence</h3>
+            <ol class="action-chain">
+              <li>
+                <span class="action-time">0&ndash;4 s</span>
+                <span class="action-name">bowing</span>
+              </li>
+              <li>
+                <span class="action-time">4&ndash;8 s</span>
+                <span class="action-name">waving</span>
+              </li>
+              <li>
+                <span class="action-time">8&ndash;12 s</span>
+                <span class="action-name">picking something up with both hands</span>
+              </li>
+              <li>
+                <span class="action-time">12&ndash;16 s</span>
+                <span class="action-name">picking something up with both hands</span>
+              </li>
+            </ol>
+            <details class="scene-description">
+              <summary>Ground-truth scene description (for debugging only)</summary>
+              <p>The sequence starts with bowing from 0:0.0 to 0:4.0 (for 4.0 seconds). The person is waving. This action is starting at 0:4.0 and continues until 0:8.0, resulting in a total time of 4.0 seconds. Someone is picking something up with both hands. This is happening from 0:8.0 to 0:12.0, which means for a total time of 4.0 seconds. As a last action, the person is picking something up with both hands. This action is starting at 0:12.0 and happens until 0:16.0, meaning the engagement in this is for 4.0 seconds.</p>
+            </details>
+            <h3 class="sample-heading">The five question&ndash;answer pairs</h3>
+            <ul class="qa-list">
+              <li class="qa-row">
+                <span class="answer-badge is-open">Open</span>
+                <div class="qa-body">
+                  <p class="qa-question">After engaging in bowing, what followed immediately?</p>
+                  <p class="qa-answer">Someone is waving.</p>
+                  <p class="qa-type"><code>right_after_open</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-open">Open</span>
+                <div class="qa-body">
+                  <p class="qa-question">At 2.803, what action is the person performing?</p>
+                  <p class="qa-answer">The person is bowing.</p>
+                  <p class="qa-type"><code>descriptive_identification_open</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-multi">Multiple-choice</span>
+                <div class="qa-body">
+                  <p class="qa-question">What is the person doing at 4.354? A: waving, B: bowing, or C: picking something up with both hands?</p>
+                  <p class="qa-answer">The correct answer is: waving.</p>
+                  <p class="qa-type"><code>descriptive_identification_multi</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-binary">Binary</span>
+                <div class="qa-body">
+                  <p class="qa-question">Is it accurate to state that the individual repeats waving 0 times?</p>
+                  <p class="qa-answer">False</p>
+                  <p class="qa-type"><code>count_binary</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-open">Open</span>
+                <div class="qa-body">
+                  <p class="qa-question">Following the performance of bowing by the person, what actions were done later?</p>
+                  <p class="qa-answer">The subject is waving and picking something up with both hands.</p>
+                  <p class="qa-type"><code>after_open</code></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sample-panel" id="sample-27001" data-sample="27001" role="tabpanel">
+          <div class="sample-video">
+            <video src="static/videos/27001.mp4" poster="static/videos/27001.jpg" preload="none" muted loop playsinline controls
+                   aria-label="Rendered human motion of QuAnTS sample 27001"></video>
+            <p class="sample-meta">Sample #27001 &middot; test split &middot; 16 s &middot; 320 &times; 24 &times; 3 values</p>
+          </div>
+          <div class="sample-info">
+            <h3 class="sample-heading">Action sequence</h3>
+            <ol class="action-chain">
+              <li>
+                <span class="action-time">0&ndash;4 s</span>
+                <span class="action-name">kicking a ball</span>
+              </li>
+              <li>
+                <span class="action-time">4&ndash;8 s</span>
+                <span class="action-name">playing guitar</span>
+              </li>
+              <li>
+                <span class="action-time">8&ndash;12 s</span>
+                <span class="action-name">eating with the right hand</span>
+              </li>
+              <li>
+                <span class="action-time">12&ndash;16 s</span>
+                <span class="action-name">kicking a ball</span>
+              </li>
+            </ol>
+            <details class="scene-description">
+              <summary>Ground-truth scene description (for debugging only)</summary>
+              <p>The person is starting off the sequence with kicking a ball. This action is starting at 0:0.0 and continues until 0:4.0, resulting in a total time of 4.0 seconds. The person is playing guitar from 0:4.0 to 0:8.0 (4.0 seconds total). The activity eating with the right hand can be observed. This action is starting at 0:8.0 and continues until 0:12.0, resulting in a total time of 4.0 seconds. The sequence finishes with kicking a ball from 0:12.0 to 0:16.0 (for 4.0 seconds).</p>
+            </details>
+            <h3 class="sample-heading">The five question&ndash;answer pairs</h3>
+            <ul class="qa-list">
+              <li class="qa-row">
+                <span class="answer-badge is-open">Open</span>
+                <div class="qa-body">
+                  <p class="qa-question">What was the last action performed by the person?</p>
+                  <p class="qa-answer">We see someone who is kicking a ball.</p>
+                  <p class="qa-type"><code>last_open</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-multi">Multiple-choice</span>
+                <div class="qa-body">
+                  <p class="qa-question">How often does the person engage in skipping rope? Do they do it 1 times (Option A), 2 times (Option B), or 0 times (Option C)?</p>
+                  <p class="qa-answer">The correct answer is 0.</p>
+                  <p class="qa-type"><code>count_multi</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-multi">Multiple-choice</span>
+                <div class="qa-body">
+                  <p class="qa-question">Immediately prior to eating with the right hand, what action was performed by the person? Did they perform A: catching a ball, B: playing guitar, or C: throwing a ball?</p>
+                  <p class="qa-answer">The correct answer is playing guitar.</p>
+                  <p class="qa-type"><code>right_before_multi</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-binary">Binary</span>
+                <div class="qa-body">
+                  <p class="qa-question">Do eating with the right hand and kicking a ball happen with the same frequency for the person?</p>
+                  <p class="qa-answer">No</p>
+                  <p class="qa-type"><code>comparison_counting_binary</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-multi">Multiple-choice</span>
+                <div class="qa-body">
+                  <p class="qa-question">Among A: sitting down, B: playing guitar and C: kicking a ball, which action has an equal number of occurrences to eating with the right hand?</p>
+                  <p class="qa-answer">The correct answer is: playing guitar.</p>
+                  <p class="qa-type"><code>comparison_counting_multi</code></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sample-panel" id="sample-27002" data-sample="27002" role="tabpanel">
+          <div class="sample-video">
+            <video src="static/videos/27002.mp4" poster="static/videos/27002.jpg" preload="none" muted loop playsinline controls
+                   aria-label="Rendered human motion of QuAnTS sample 27002"></video>
+            <p class="sample-meta">Sample #27002 &middot; test split &middot; 16 s &middot; 320 &times; 24 &times; 3 values</p>
+          </div>
+          <div class="sample-info">
+            <h3 class="sample-heading">Action sequence</h3>
+            <ol class="action-chain">
+              <li>
+                <span class="action-time">0&ndash;4 s</span>
+                <span class="action-name">eating with the right hand</span>
+              </li>
+              <li>
+                <span class="action-time">4&ndash;8 s</span>
+                <span class="action-name">bowing</span>
+              </li>
+              <li>
+                <span class="action-time">8&ndash;12 s</span>
+                <span class="action-name">running</span>
+              </li>
+              <li>
+                <span class="action-time">12&ndash;16 s</span>
+                <span class="action-name">bowing</span>
+              </li>
+            </ol>
+            <details class="scene-description">
+              <summary>Ground-truth scene description (for debugging only)</summary>
+              <p>The person is starting off the sequence with eating with the right hand. This is happening from 0:0.0 to 0:4.0, which means for a total time of 4.0 seconds. The person is engaging in bowing from 0:4.0 to 0:8.0 (for 4.0 seconds). The person is running. It is starting at second 0:8.0 and continuing until 0:12.0, so the person is doing this for 4.0 seconds. Finally, the person is bowing. This action is starting at 0:12.0 and happens until 0:16.0, meaning the engagement in this is for 4.0 seconds.</p>
+            </details>
+            <h3 class="sample-heading">The five question&ndash;answer pairs</h3>
+            <ul class="qa-list">
+              <li class="qa-row">
+                <span class="answer-badge is-open">Open</span>
+                <div class="qa-body">
+                  <p class="qa-question">At 11.943, what action is the person performing?</p>
+                  <p class="qa-answer">Someone is running.</p>
+                  <p class="qa-type"><code>descriptive_identification_open</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-binary">Binary</span>
+                <div class="qa-body">
+                  <p class="qa-question">Does the person take part in running 2 times?</p>
+                  <p class="qa-answer">Not true</p>
+                  <p class="qa-type"><code>count_binary</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-binary">Binary</span>
+                <div class="qa-body">
+                  <p class="qa-question">Was bowing the final activity done by the person?</p>
+                  <p class="qa-answer">Yes</p>
+                  <p class="qa-type"><code>last_binary</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-binary">Binary</span>
+                <div class="qa-body">
+                  <p class="qa-question">Can we confirm that the individual participated in exactly 3 activities throughout the entire sequence?</p>
+                  <p class="qa-answer">Yes</p>
+                  <p class="qa-type"><code>interval_whole_sequence_binary</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-binary">Binary</span>
+                <div class="qa-body">
+                  <p class="qa-question">Is there a dissimilarity between the actions at the beginning and the end?</p>
+                  <p class="qa-answer">This is correct!</p>
+                  <p class="qa-type"><code>comparison_first_last_different_binary</code></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sample-panel" id="sample-27003" data-sample="27003" role="tabpanel">
+          <div class="sample-video">
+            <video src="static/videos/27003.mp4" poster="static/videos/27003.jpg" preload="none" muted loop playsinline controls
+                   aria-label="Rendered human motion of QuAnTS sample 27003"></video>
+            <p class="sample-meta">Sample #27003 &middot; test split &middot; 16 s &middot; 320 &times; 24 &times; 3 values</p>
+          </div>
+          <div class="sample-info">
+            <h3 class="sample-heading">Action sequence</h3>
+            <ol class="action-chain">
+              <li>
+                <span class="action-time">0&ndash;4 s</span>
+                <span class="action-name">picking something up with both hands</span>
+              </li>
+              <li>
+                <span class="action-time">4&ndash;8 s</span>
+                <span class="action-name">holding a baby</span>
+              </li>
+              <li>
+                <span class="action-time">8&ndash;12 s</span>
+                <span class="action-name">sitting down</span>
+              </li>
+              <li>
+                <span class="action-time">12&ndash;16 s</span>
+                <span class="action-name">sitting down</span>
+              </li>
+            </ol>
+            <details class="scene-description">
+              <summary>Ground-truth scene description (for debugging only)</summary>
+              <p>The person is starting the sequence with picking something up with both hands at timestamp 0:0.0 and ending at 0:4.0, resulting in a total time of 4.0 seconds. The activity is holding a baby from 0:4.0 to 0:8.0 (for 4.0 seconds). The subject is sitting down from 0:8.0 to 0:12.0 (4.0 seconds total). The sequence finishes with sitting down. It is starting at second 0:12.0 and continuing until 0:16.0, so the person is doing this for 4.0 seconds.</p>
+            </details>
+            <h3 class="sample-heading">The five question&ndash;answer pairs</h3>
+            <ul class="qa-list">
+              <li class="qa-row">
+                <span class="answer-badge is-binary">Binary</span>
+                <div class="qa-body">
+                  <p class="qa-question">Was jumping once the most commonly undertaken action by the person throughout the sequence?</p>
+                  <p class="qa-answer">False</p>
+                  <p class="qa-type"><code>extremum_most_binary</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-open">Open</span>
+                <div class="qa-body">
+                  <p class="qa-question">After the person performed holding a baby, what ensued directly?</p>
+                  <p class="qa-answer">We see someone who is sitting down.</p>
+                  <p class="qa-type"><code>right_after_open</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-multi">Multiple-choice</span>
+                <div class="qa-body">
+                  <p class="qa-question">Some time before a person was sitting down, was it A: eating with the right hand, B: picking something up with both hands, or C: running?</p>
+                  <p class="qa-answer">The correct answer is: picking something up with both hands.</p>
+                  <p class="qa-type"><code>before_multi</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-binary">Binary</span>
+                <div class="qa-body">
+                  <p class="qa-question">Are the first and last actions alike?</p>
+                  <p class="qa-answer">False</p>
+                  <p class="qa-type"><code>comparison_first_last_same_binary</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-binary">Binary</span>
+                <div class="qa-body">
+                  <p class="qa-question">Was holding a baby observed as a subsequent action for the person some time after picking something up with both hands?</p>
+                  <p class="qa-answer">Yes</p>
+                  <p class="qa-type"><code>after_binary</code></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sample-panel" id="sample-27004" data-sample="27004" role="tabpanel">
+          <div class="sample-video">
+            <video src="static/videos/27004.mp4" poster="static/videos/27004.jpg" preload="none" muted loop playsinline controls
+                   aria-label="Rendered human motion of QuAnTS sample 27004"></video>
+            <p class="sample-meta">Sample #27004 &middot; test split &middot; 16 s &middot; 320 &times; 24 &times; 3 values</p>
+          </div>
+          <div class="sample-info">
+            <h3 class="sample-heading">Action sequence</h3>
+            <ol class="action-chain">
+              <li>
+                <span class="action-time">0&ndash;4 s</span>
+                <span class="action-name">bowing</span>
+              </li>
+              <li>
+                <span class="action-time">4&ndash;8 s</span>
+                <span class="action-name">running</span>
+              </li>
+              <li>
+                <span class="action-time">8&ndash;12 s</span>
+                <span class="action-name">sitting down</span>
+              </li>
+              <li>
+                <span class="action-time">12&ndash;16 s</span>
+                <span class="action-name">holding a baby</span>
+              </li>
+            </ol>
+            <details class="scene-description">
+              <summary>Ground-truth scene description (for debugging only)</summary>
+              <p>The activity bowing is the first action done by the person from 0:0.0 to 0:4.0 (4.0 seconds total). The person is engaging in running. This action is starting at 0:4.0 and happens until 0:8.0, meaning the engagement in this is for 4.0 seconds. The subject is sitting down. It is starting at second 0:8.0 and continuing until 0:12.0, so the person is doing this for 4.0 seconds. The last movement the person is doing is holding a baby from 0:12.0 to 0:16.0 (4.0 seconds total).</p>
+            </details>
+            <h3 class="sample-heading">The five question&ndash;answer pairs</h3>
+            <ul class="qa-list">
+              <li class="qa-row">
+                <span class="answer-badge is-multi">Multiple-choice</span>
+                <div class="qa-body">
+                  <p class="qa-question">Throughout the duration from 5.579 to 10.231, how many distinct behaviors is the person engaged in? A: 3, B: 2, C: 4</p>
+                  <p class="qa-answer">The correct answer is 2.</p>
+                  <p class="qa-type"><code>interval_part_sequence_multi</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-binary">Binary</span>
+                <div class="qa-body">
+                  <p class="qa-question">Can we state that the initial and final actions are an exact match?</p>
+                  <p class="qa-answer">No</p>
+                  <p class="qa-type"><code>comparison_first_last_same_binary</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-multi">Multiple-choice</span>
+                <div class="qa-body">
+                  <p class="qa-question">What action can be observed right before the person was holding a baby? Did they perform A: T-posing, B: punching, or C: sitting down?</p>
+                  <p class="qa-answer">The correct answer is sitting down.</p>
+                  <p class="qa-type"><code>right_before_multi</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-binary">Binary</span>
+                <div class="qa-body">
+                  <p class="qa-question">After being involved in running, did the person transition to sitting down at some later point?</p>
+                  <p class="qa-answer">This is true!</p>
+                  <p class="qa-type"><code>after_binary</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-binary">Binary</span>
+                <div class="qa-body">
+                  <p class="qa-question">Did the person end with bowing as the final action?</p>
+                  <p class="qa-answer">This is not true.</p>
+                  <p class="qa-type"><code>last_binary</code></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sample-panel" id="sample-27005" data-sample="27005" role="tabpanel">
+          <div class="sample-video">
+            <video src="static/videos/27005.mp4" poster="static/videos/27005.jpg" preload="none" muted loop playsinline controls
+                   aria-label="Rendered human motion of QuAnTS sample 27005"></video>
+            <p class="sample-meta">Sample #27005 &middot; test split &middot; 16 s &middot; 320 &times; 24 &times; 3 values</p>
+          </div>
+          <div class="sample-info">
+            <h3 class="sample-heading">Action sequence</h3>
+            <ol class="action-chain">
+              <li>
+                <span class="action-time">0&ndash;4 s</span>
+                <span class="action-name">skipping rope</span>
+              </li>
+              <li>
+                <span class="action-time">4&ndash;8 s</span>
+                <span class="action-name">skipping rope</span>
+              </li>
+              <li>
+                <span class="action-time">8&ndash;12 s</span>
+                <span class="action-name">waving</span>
+              </li>
+              <li>
+                <span class="action-time">12&ndash;16 s</span>
+                <span class="action-name">holding a baby</span>
+              </li>
+            </ol>
+            <details class="scene-description">
+              <summary>Ground-truth scene description (for debugging only)</summary>
+              <p>The person is starting off the sequence with skipping rope from 0:0.0 to 0:4.0 (for 4.0 seconds). The person is performing skipping rope from 0:4.0 to 0:8.0 (4.0 seconds total). The subject is waving. It is starting at second 0:8.0 and continuing until 0:12.0, so the person is doing this for 4.0 seconds. As the last action, the person is performing holding a baby at timestamp 0:12.0 and ending at 0:16.0, resulting in a total time of 4.0 seconds.</p>
+            </details>
+            <h3 class="sample-heading">The five question&ndash;answer pairs</h3>
+            <ul class="qa-list">
+              <li class="qa-row">
+                <span class="answer-badge is-multi">Multiple-choice</span>
+                <div class="qa-body">
+                  <p class="qa-question">What did the person do immediately after waving? Was it A: holding a baby, B: throwing a ball, or C: running?</p>
+                  <p class="qa-answer">The correct answer is: holding a baby.</p>
+                  <p class="qa-type"><code>right_after_multi</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-multi">Multiple-choice</span>
+                <div class="qa-body">
+                  <p class="qa-question">How often does the person engage in throwing a ball? Do they do it 0 times (Option A), 1 times (Option B), or 2 times (Option C)?</p>
+                  <p class="qa-answer">The correct answer is 0.</p>
+                  <p class="qa-type"><code>count_multi</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-binary">Binary</span>
+                <div class="qa-body">
+                  <p class="qa-question">Was skipping rope the action that happened most often for the person in the given sequence?</p>
+                  <p class="qa-answer">This is correct!</p>
+                  <p class="qa-type"><code>extremum_most_binary</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-binary">Binary</span>
+                <div class="qa-body">
+                  <p class="qa-question">Was holding a baby the final action undertaken by the person?</p>
+                  <p class="qa-answer">True</p>
+                  <p class="qa-type"><code>last_binary</code></p>
+                </div>
+              </li>
+              <li class="qa-row">
+                <span class="answer-badge is-open">Open</span>
+                <div class="qa-body">
+                  <p class="qa-question">How many different actions does the person perform throughout the complete sequence?</p>
+                  <p class="qa-answer">3</p>
+                  <p class="qa-type"><code>interval_whole_sequence_open</code></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End data samples -->
+
+  <!-- Dataset at a glance -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">The Dataset at a Glance</h2>
+
+      <div class="stat-grid">
+        <div class="stat-tile">
+          <span class="stat-value">150,000</span>
+          <span class="stat-label">question&ndash;answer pairs</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-value">30,000</span>
+          <span class="stat-label">motion trajectories (~133.3 h)</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-value">45</span>
+          <span class="stat-label">balanced question types</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-value">3</span>
+          <span class="stat-label">answer types: binary, multiple-choice, open</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-value">19</span>
+          <span class="stat-label">distinct actions, four per sequence</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-value">320 &times; 24 &times; 3</span>
+          <span class="stat-label">time steps &times; joints &times; coordinates</span>
+        </div>
+      </div>
+
+      <div class="content section-lead">
+        <p>
+          The predefined splits hold <strong>120,000</strong>&nbsp;(80&nbsp;%) training,
+          <strong>15,000</strong>&nbsp;(10&nbsp;%) validation, and <strong>15,000</strong>&nbsp;(10&nbsp;%) test samples.
+          All five QA pairs of a context trajectory land in the same split, so no motion leaks across them.
+          By answer type, QuAnTS holds 61,804 binary, 43,599 multiple-choice, and 44,597 open-ended pairs, of which
+          125,726 QA pairs and 100,568 questions are unique. Beyond the question, answer, and trajectory, each sample
+          carries its question and answer type, the ground-truth action sequence, and a textual scene description for
+          debugging and diagnostics.
+        </p>
+      </div>
+
+      <div class="key-figure">
+        <img src="static/images/qa_types.png" alt="Hierarchy of question types (descriptive, temporal, comparison, reasoning, overarching) and answer types (binary, multiple-choice, open); those covered by QuAnTS are highlighted in blue" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          <strong>The hierarchy of question and answer types we identified.</strong>
+          The <span class="legend-blue">blue</span> types are the most fundamental to time series QA and are therefore
+          included in QuAnTS. The <span class="legend-gray">gray</span> ones are left for future extensions &mdash; the
+          blue ones alone already make for a very challenging dataset.
+        </h2>
+      </div>
+
+      <div class="two-column-figure">
+        <div class="figure-column">
+          <img src="static/images/question_distribution.png" alt="Bar chart of the number of samples per question type, grouped by binary, multiple-choice, and open answer types, all close to 3,000-3,700 samples" loading="lazy"/>
+        </div>
+        <div class="text-column content">
+          <h3 class="title is-5">A balanced mix, by construction</h3>
+          <p>
+            Question types are sampled explicitly rather than harvested, so all 45 of them occur at comparable
+            frequency. Only a few categories, such as <code>comparison_counting_open</code>, are rarer because they can
+            only be posed when the action sequence permits a non-trivial answer.
+          </p>
+          <p>
+            Diversity is enforced on every axis: 10&ndash;20 hand-reviewed templates per question type, LLM-assisted
+            paraphrasing, randomized answer positions, and organic variation from the motion diffusion. Not a single
+            trajectory is duplicated, and under a soft equality on the signal level the effective sample size stays
+            above 99&nbsp;%.
+          </p>
+        </div>
+      </div>
+
+      <h3 class="title is-4 has-text-centered actions-heading">Nineteen clearly discernible actions</h3>
+      <div class="action-strip">
+        <figure><img src="static/images/actions/waving.png" alt="Rendered figure waving" loading="lazy"/><figcaption>waving</figcaption></figure>
+        <figure><img src="static/images/actions/dancing.png" alt="Rendered figure dancing" loading="lazy"/><figcaption>dancing</figcaption></figure>
+        <figure><img src="static/images/actions/golfing.png" alt="Rendered figure golfing" loading="lazy"/><figcaption>golfing</figcaption></figure>
+        <figure><img src="static/images/actions/kicking.png" alt="Rendered figure kicking a ball" loading="lazy"/><figcaption>kicking a ball</figcaption></figure>
+        <figure><img src="static/images/actions/catching.png" alt="Rendered figure catching a ball" loading="lazy"/><figcaption>catching a ball</figcaption></figure>
+        <figure><img src="static/images/actions/sitting.png" alt="Rendered figure sitting down" loading="lazy"/><figcaption>sitting down</figcaption></figure>
+      </div>
+      <p class="action-list">
+        playing guitar &middot; punching &middot; running &middot; jumping once &middot; drinking with the left hand &middot;
+        bowing &middot; throwing a ball &middot; shaking hands &middot; skipping rope &middot;
+        picking something up with both hands &middot; dancing &middot; eating with the right hand &middot; waving &middot;
+        catching a ball &middot; kicking a ball &middot; sitting down &middot; golfing (swinging a club) &middot;
+        T-posing &middot; holding a baby
+      </p>
+    </div>
+  </section>
+  <!-- End dataset at a glance -->
+
+  <!-- How it works -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">How QuAnTS Is Built</h2>
+          <div class="content">
+            <p>
+              Questions are <em>generated</em>, not annotated. We first sample a sequence of four actions, then draw
+              five question and answer types for it, and finally instantiate each from one of many manually reviewed
+              templates. Defining the question types up front keeps the distribution balanced and makes it possible to
+              inspect a model's performance per subtask.
+            </p>
+            <p>
+              The matching time series comes from a human motion diffusion model, <em>Spatio-Temporal Motion
+              Collage</em>&nbsp;(STMC), conditioned on the very action sequence the questions are about. Four prompts of
+              four seconds each are blended into one fluent 16-second motion at 20&nbsp;fps, yielding three spatial
+              coordinates for each of the 24 SMPL joints &mdash; a 320&nbsp;&times;&nbsp;24&nbsp;&times;&nbsp;3 multivariate time series.
+              Generating rather than reusing recordings lets us ask precisely the questions we want, and gives multiple
+              organic variations of the same action.
+            </p>
+            <p>
+              For evaluation, binary and multiple-choice answers are scored with accuracy and macro-averaged precision,
+              recall, and F1; unparseable responses count as wrong. Open answers are scored with ROUGE and METEOR plus
+              an LLM judge on a 1&ndash;3 scale normalized to <span class="nowrap">[0, 1]</span>. We validated the judge
+              against human ratings on 200 samples and settled on Qwen3&nbsp;8B, which reaches a Pearson correlation of
+              0.912 and deviates by 7.45&nbsp;% on average.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="key-figure motivation-figure">
+        <img src="static/images/chat.png" alt="Example chat: a user asks what the person is doing first, the assistant answers that they are waving, and the conversation continues about how often they jump" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          <strong>Where this is going.</strong>
+          Text offers a highly intuitive medium to interact with otherwise opaque multivariate time series.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End how it works -->
+
+  <!-- Results -->
+  <section class="section hero is-light" id="results">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Key Results</h2>
+      <div class="content section-lead">
+        <p>
+          Given ground-truth scene descriptions, a finetuned Llama&nbsp;3.1&nbsp;8B answers QuAnTS almost perfectly
+          (99.12&nbsp;% F1 binary, 99.98&nbsp;% multi, 0.9434 LLM judge) &mdash; the dataset is logically consistent and
+          answerable. Neither the question alone nor the time series alone gets anywhere near that, so there are no
+          shortcuts to exploit. Humans solve the closed formats well, while a general-purpose LLM on serialized values
+          and the purpose-built ChatTS both hover around chance. Only xQA, which is handed structured action labels,
+          reaches human level.
+        </p>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="results-table">
+          <caption>Binary and multiple-choice answers. Best value per column in <strong>bold</strong>.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Split</th>
+              <th scope="col">System</th>
+              <th scope="col">Accuracy&nbsp;&uarr;</th>
+              <th scope="col">Precision&nbsp;&uarr;</th>
+              <th scope="col">Recall&nbsp;&uarr;</th>
+              <th scope="col">F1&nbsp;&uarr;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="rowgroup" rowspan="9" class="split-cell">Binary</th>
+                <td>Ablation: Only Question</td><td>55.22&nbsp;%</td><td>57.53&nbsp;%</td><td>45.35&nbsp;%</td><td>50.72&nbsp;%</td></tr>
+            <tr class="group-end"><td>Ablation: Only Time Series</td><td>49.80&nbsp;%</td><td>50.58&nbsp;%</td><td>51.79&nbsp;%</td><td>51.18&nbsp;%</td></tr>
+            <tr class="human-row group-end"><td>Humans (<em>n</em>&nbsp;=&nbsp;840)</td><td>77.50&nbsp;%</td><td>81.08&nbsp;%</td><td><strong>74.66&nbsp;%</strong></td><td>77.74&nbsp;%</td></tr>
+            <tr><td>Naive: TS + Question</td><td>48.49&nbsp;%</td><td>48.79&nbsp;%</td><td>28.00&nbsp;%</td><td>35.58&nbsp;%</td></tr>
+            <tr class="group-end"><td>ChatTS</td><td>51.69&nbsp;%</td><td>55.38&nbsp;%</td><td>25.36&nbsp;%</td><td>34.79&nbsp;%</td></tr>
+            <tr><td>xQA-Llama on GT</td><td>79.44&nbsp;%</td><td>84.91&nbsp;%</td><td>72.42&nbsp;%</td><td>78.17&nbsp;%</td></tr>
+            <tr><td>xQA-Qwen on GT</td><td>80.92&nbsp;%</td><td>92.28&nbsp;%</td><td>68.14&nbsp;%</td><td>78.39&nbsp;%</td></tr>
+            <tr><td>xQA-Llama on AE</td><td>79.46&nbsp;%</td><td>84.60&nbsp;%</td><td>72.84&nbsp;%</td><td>78.28&nbsp;%</td></tr>
+            <tr class="split-end"><td>xQA-Qwen on AE</td><td><strong>81.00&nbsp;%</strong></td><td><strong>92.52&nbsp;%</strong></td><td>68.10&nbsp;%</td><td><strong>78.46&nbsp;%</strong></td></tr>
+
+            <tr><th scope="rowgroup" rowspan="9" class="split-cell">Multi</th>
+                <td>Ablation: Only Question</td><td>64.47&nbsp;%</td><td>64.47&nbsp;%</td><td>64.47&nbsp;%</td><td>64.38&nbsp;%</td></tr>
+            <tr class="group-end"><td>Ablation: Only Time Series</td><td>0.28&nbsp;%</td><td>0.28&nbsp;%</td><td>0.28&nbsp;%</td><td>0.28&nbsp;%</td></tr>
+            <tr class="human-row group-end"><td>Humans (<em>n</em>&nbsp;=&nbsp;820)</td><td>86.59&nbsp;%</td><td>86.55&nbsp;%</td><td>86.61&nbsp;%</td><td>86.54&nbsp;%</td></tr>
+            <tr><td>Naive: TS + Question</td><td>9.69&nbsp;%</td><td>9.69&nbsp;%</td><td>9.69&nbsp;%</td><td>9.62&nbsp;%</td></tr>
+            <tr class="group-end"><td>ChatTS</td><td>30.40&nbsp;%</td><td>30.13&nbsp;%</td><td>30.58&nbsp;%</td><td>29.12&nbsp;%</td></tr>
+            <tr><td>xQA-Llama on GT</td><td>81.50&nbsp;%</td><td>81.64&nbsp;%</td><td>81.51&nbsp;%</td><td>81.50&nbsp;%</td></tr>
+            <tr><td>xQA-Qwen on GT</td><td><strong>88.01&nbsp;%</strong></td><td><strong>88.04&nbsp;%</strong></td><td><strong>88.03&nbsp;%</strong></td><td><strong>88.01&nbsp;%</strong></td></tr>
+            <tr><td>xQA-Llama on AE</td><td>81.18&nbsp;%</td><td>81.30&nbsp;%</td><td>81.19&nbsp;%</td><td>81.18&nbsp;%</td></tr>
+            <tr><td>xQA-Qwen on AE</td><td>87.97&nbsp;%</td><td>87.99&nbsp;%</td><td>87.98&nbsp;%</td><td>87.97&nbsp;%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="results-table">
+          <caption>Open-ended answers, scored by ROUGE, METEOR, and the validated LLM judge.</caption>
+          <thead>
+            <tr>
+              <th scope="col">System</th>
+              <th scope="col">ROUGE&nbsp;&uarr;</th>
+              <th scope="col">METEOR&nbsp;&uarr;</th>
+              <th scope="col">LLMJudge&nbsp;&uarr;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Ablation: Only Question</td><td><strong>0.2053</strong></td><td>0.2436</td><td>0.6021</td></tr>
+            <tr class="group-end"><td>Ablation: Only Time Series</td><td>0.0274</td><td>0.0154</td><td>0.0173</td></tr>
+            <tr class="human-row group-end"><td>Humans (<em>n</em>&nbsp;=&nbsp;440)</td><td>0.0953</td><td>0.2635</td><td>0.6148</td></tr>
+            <tr><td>Naive: TS + Question</td><td>0.0603</td><td>0.0576</td><td>0.0460</td></tr>
+            <tr class="group-end"><td>ChatTS</td><td>0.0455</td><td>0.1060</td><td>0.0702</td></tr>
+            <tr><td>xQA-Llama on GT</td><td>0.0913</td><td>0.3677</td><td>0.7729</td></tr>
+            <tr><td>xQA-Qwen on GT</td><td>0.1789</td><td><strong>0.3697</strong></td><td><strong>0.8279</strong></td></tr>
+            <tr><td>xQA-Llama on AE</td><td>0.0898</td><td>0.3679</td><td>0.7753</td></tr>
+            <tr><td>xQA-Qwen on AE</td><td>0.1782</td><td>0.3692</td><td>0.8176</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="content section-lead">
+        <p>
+          <strong>What this means.</strong> xQA separates perception from reasoning: an xLSTM-Mixer action encoder
+          (AE) labels each segment, and an untrained instruction-following LLM reasons over the resulting action
+          sequence. That it matches the ground-truth-label (GT) variant shows the segmentation is learnable &mdash; but
+          both rely on privileged action information that is not available when solving QuAnTS proper. The step forward
+          is therefore models that recognize the actions in the raw signal themselves.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- End results -->
+
+  <!-- Get the data -->
+  <section class="section" id="get-started">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Get Started</h2>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths content">
+          <p>Load the published dataset straight from the Hugging Face Hub:</p>
+          <pre><code>from datasets import load_dataset
+
+quants = load_dataset("dasyd/quants")
+print(quants["test"][0]["question"])</code></pre>
+          <p>
+            Or generate your own variant &mdash; the pipeline is configurable in the number of samples, the question
+            type distribution, and the answer formats:
+          </p>
+          <pre><code>git clone https://github.com/mauricekraus/quants-generate.git
+pip install -e quants[dev]
+python -m generate prompts --num-samples 1000</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End get the data -->
+
+  <!--BibTex citation -->
+  <section class="section hero is-light" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@article{divo2025quants,
+      title={QuAnTS: Question Answering on Time Series},
+      author={Divo, Felix and Kraus, Maurice and Nguyen, Anh Q. and Xue, Hao and Razzak, Imran and Salim, Flora D. and Kersting, Kristian and Dhami, Devendra Singh},
+      journal={arXiv preprint arXiv:2511.05124},
+      year={2025},
+}</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
