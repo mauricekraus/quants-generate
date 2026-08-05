@@ -86,37 +86,6 @@ By default, it loads the data from HuggingFace. Log in with `hf auth login` or p
 Alternatively, you can generate from a local folder by providing `--input-path my-own-quants-dataset/data`.
 To run it for multiple at once, run something like `for i in {0..10}; do python -m generate render --idx $i --no-ask-for-token; done`.
 
-### The project website
-
-The static project page lives in `docs/website/`. It introduces the dataset, links to the paper, the
-dataset, and this repository, and lets visitors browse eight test-split samples with their rendered
-motion videos and all five question-answer pairs each. Preview it locally with:
-
-```shell
-python -m http.server -d docs/website 8080
-```
-
-The page is self-contained (no build step, all CSS/JS vendored under `docs/website/static/`).
-Note that GitHub Pages can only serve the repository root or `/docs`, so publishing `docs/website/`
-requires a Pages workflow that uploads that subfolder as the artifact.
-
-To show a different sample, render its video from the dataset folder, burning in the clock the
-questions refer to:
-
-```shell
-ID=27500
-ffmpeg -i generated-dataset-30_000/data/$ID/render_smpl_compressed.mp4 \
-    -vf "fps=10,scale=320:320,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf:\
-expansion=normal:text='%{pts \: hms}':fontcolor=white:fontsize=18:x=(w-text_w)/2:y=h-th-10:\
-box=1:boxcolor=black:boxborderw=5,pad=320:364:0:0:color=white" \
-    -movflags +faststart -pix_fmt yuv420p -crf 30 -an docs/website/static/videos/$ID.mp4
-ffmpeg -ss 2 -i docs/website/static/videos/$ID.mp4 -frames:v 1 -q:v 6 docs/website/static/videos/$ID.jpg
-```
-
-The bottom padding keeps the timestamp clear of the video controls, and the JPEG serves as the poster
-frame. Then update the corresponding `.sample-chip` and `.sample-panel` blocks in `index.html`.
-Only show samples whose answers you have verified against the action sequence.
-
 ### Analyzing the dataset
 
 The `quants/notebooks/` folder holds standalone analysis notebooks. Log in with `hf auth login` first,
