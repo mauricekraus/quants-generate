@@ -2,6 +2,7 @@
 
 ![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)
 [![arXiv](https://img.shields.io/badge/arXiv-2511.05124-b31b1b.svg)](https://arxiv.org/abs/2511.05124)
+[![Project website](https://img.shields.io/badge/project-website-1f4e79.svg)](docs/website/index.html)
 
 [![Dataset on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/dasyd/quants)
 
