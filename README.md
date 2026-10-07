@@ -1,18 +1,18 @@
-#  QuAnTS: Question Answering on Time Series – Dataset Generation
+# QuAnTS: Question Answering on Time Series – Dataset Generation
 
-![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)
-[![arXiv](https://img.shields.io/badge/arXiv-2511.05124-b31b1b.svg)](https://arxiv.org/abs/2511.05124)
-[![Project website](https://img.shields.io/badge/project-website-1f4e79.svg)](https://mauricekraus.github.io/quants-generate/)
-
-[![Dataset on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/dasyd/quants)
+[![arXiv](https://img.shields.io/badge/arXiv-2511.05124-b31b1b.svg?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2511.05124)
+[![Project Website](https://img.shields.io/badge/Project-Website-1f4e79.svg)](https://mauricekraus.github.io/quants-generate/)
+[![Dataset on Hugging Face](https://img.shields.io/badge/Hugging%20Face-Dataset-ffd21e.svg?logo=huggingface)](https://huggingface.co/datasets/dasyd/quants)
+[![Dataset Generation on GitHub](https://img.shields.io/badge/GitHub-Dataset%20Generation-blue.svg?logo=github)](https://github.com/mauricekraus/quants-generate)
+[![Evaluation on GitHub](https://img.shields.io/badge/GitHub-Evaluation-blue.svg?logo=github)](https://github.com/felixdivo/quants-eval)
 
 This repository holds the code for generating the multimodal QuAnTS dataset, comprised of time series of human activities and textual questions and answers.
 The purpose of the generated dataset is to lay the groundwork for a system that can answer questions based on time series data by examining how to produce a synthetic text and time series dataset that corresponds to real-world activities.
 Question and answer pairs are generated automatically from predefined question categories.
 
-Further information regarding the question categories can be found in the corresponding paper: *To be published*
+Further information regarding the question categories can be found in [the corresponding paper](https://arxiv.org/abs/2511.05124).
 
-<img src="docs/intro-chat.png" alt="Example chat motivating time series question answering: Q: 'What is the person doing first?', A: 'They are waving.', Q: 'How many times are they jumping after that?', A: '...'" width="40%"/>
+<img src="docs/static/images/chat.png" alt="Example chat motivating time series question answering: Q: 'What is the person doing first?', A: 'They are waving.', Q: 'How many times are they jumping after that?', A: '...'" width="40%"/>
 
 ## Usage of this repository
 
@@ -37,7 +37,7 @@ This repository also provides a Docker image and a [devcontainer](https://contai
 
 ### Overview
 
-![QuAnTS is generated in several steps: An action sequence is sampled ➀, where for each we sample five question and answer types ➁. For diversity, each of them is then instantiated from a sampled template ➂. The time series from the human motion diffusion ➃ is then combined with the QA-pair and auxiliary data ➄. Example QA pairs are shown below. Dice indicate randomized operations for dataset diversity.](docs/overview.png "Dataset generation overview")
+![QuAnTS is generated in several steps: An action sequence is sampled ➀, where for each we sample five question and answer types ➁. For diversity, each of them is then instantiated from a sampled template ➂. The time series from the human motion diffusion ➃ is then combined with the QA-pair and auxiliary data ➄. Example QA pairs are shown below. Dice indicate randomized operations for dataset diversity.](docs/static/images/overview.png "Dataset generation overview")
 
 
 Run `python -m generate --help` to get an overview of the available commands:
@@ -126,6 +126,6 @@ This repository is licensed under the MIT License.
 See the [LICENSE](LICENSE) file for details.
 This repository contains a copy of [the STMC codebase](https://github.com/nv-tlabs/stmc).
 
-For using the dataset and citing it, please refer to [the HuggingFace dataset repository](https://huggingface.co/datasets/dasyd/quants#licensing-citation-and-acknowledgments) (at the bottom).
+For using the dataset and citing it, please refer to [the HuggingFace dataset repository](https://huggingface.co/datasets/dasyd/quants#licensing-and-citation) (at the bottom).
 
 QuAnTS is inspired by the style of [ScienceQA](https://huggingface.co/datasets/derek-thomas/ScienceQA?row=1).

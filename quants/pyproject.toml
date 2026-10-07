@@ -18,7 +18,7 @@ classifiers = [
   "Natural Language :: English",
   "License :: OSI Approved :: MIT License",
 ]
-urls = { Homepage = "https://github.com/felixdivo/time_qa-dataset" }
+urls = { Homepage = "https://github.com/mauricekraus/quants-generate" }
 dependencies = [
     "rich",
     "numpy",
