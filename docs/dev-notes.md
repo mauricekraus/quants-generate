@@ -12,6 +12,20 @@ python -m http.server -d docs 8080
 
 GitHub Pages publishes the `/docs` directory. The entry point is `docs/index.html`, with its assets under `docs/static/`.
 
+## Updating results
+
+The result tables in `index.html` report held-out test scores. Display accuracy, precision, recall,
+and F1 as percentages; keep ROUGE, METEOR, and normalized LLMJudge on the 0–1 scale.
+For Q2, Q3, and Naive, precision, recall, and F1 are macro-averaged, and ROUGE is stemmed ROUGE-L F1.
+Keep the Human, ChatTS, and xQA reference scores under their respective evaluation setups;
+do not mark cross-setup winners without reconciling the evaluation conditions.
+
+The retention table compares each adapter with the base at the same precision.
+PPL/base is a multiplicative ratio, not a percentage or a QuAnTS task metric.
+
+Check every displayed value against the aggregate result CSVs before publishing.
+Keep generated predictions and model artifacts outside the website repository.
+
 ## Adding new samples
 
 To show a different sample, render its video from the dataset folder, burning in the clock the questions refer to:

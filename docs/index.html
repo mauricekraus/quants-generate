@@ -913,8 +913,9 @@
               organic variations of the same action.
             </p>
             <p>
-              For evaluation, binary and multiple-choice answers are scored with accuracy and macro-averaged precision,
-              recall, and F1; unparseable responses count as wrong. Open answers are scored with ROUGE and METEOR plus
+              For Q2, Q3, and Naive, binary and multiple-choice answers are scored with accuracy and macro-averaged
+              precision, recall, and F1; unparseable responses count as wrong. Open answers use stemmed ROUGE-L F1
+              and METEOR plus
               an LLM judge on a 1&ndash;3 scale normalized to <span class="nowrap">[0, 1]</span>. We validated the judge
               against human ratings on 200 samples and settled on Qwen3&nbsp;8B, which reaches a Pearson correlation of
               0.912 and deviates by 7.45&nbsp;% on average.
@@ -941,19 +942,27 @@
         <p>
           Given ground-truth scene descriptions, a finetuned Llama&nbsp;3.1&nbsp;8B answers QuAnTS almost perfectly
           (99.12&nbsp;% F1 binary, 99.98&nbsp;% multi, 0.9434 LLM judge) &mdash; the dataset is logically consistent and
-          answerable. Neither the question alone nor the time series alone gets anywhere near that, so there are no
-          shortcuts to exploit. Humans solve the closed formats well, while a general-purpose LLM on serialized values
-          and the purpose-built ChatTS both hover around chance. Only xQA, which is handed structured action labels,
-          reaches human level.
+          answerable. Input ablations show answer-format-dependent performance: question-only inputs (Q2) support
+          above-chance binary accuracy, while time-series-only inputs (Q3) remain near chance on closed answers.
+          Naive, which receives both the serialized trajectory and the question, performs weakly on closed answers
+          but strongly on open answers.
+        </p>
+        <p>
+          Q2, Q3, and Naive each use Llama&nbsp;3.1&nbsp;8B with an independent QLoRA adapter per answer format,
+          trained for five epochs. Numerical inputs retain the full
+          320&nbsp;&times;&nbsp;24&nbsp;&times;&nbsp;3 trajectory as compact nested JSON after scaling to
+          [&minus;999,&nbsp;+999] and rounding to integers. Finetuning and evaluating the nine adapters required
+          approximately 5,492 NVIDIA H100 GPU-hours.
         </p>
       </div>
 
       <div class="table-wrapper">
         <table class="results-table">
-          <caption>Binary and multiple-choice answers. Best value per column in <strong>bold</strong>.</caption>
+          <caption>Binary and multiple-choice test results, in percentages. For Q2, Q3, and Naive, precision,
+            recall, and F1 are macro-averaged.</caption>
           <thead>
             <tr>
-              <th scope="col">Split</th>
+              <th scope="col">Answer format</th>
               <th scope="col">System</th>
               <th scope="col">Accuracy&nbsp;&uarr;</th>
               <th scope="col">Precision&nbsp;&uarr;</th>
@@ -963,24 +972,24 @@
           </thead>
           <tbody>
             <tr><th scope="rowgroup" rowspan="9" class="split-cell">Binary</th>
-                <td>Ablation: Only Question</td><td>55.22&nbsp;%</td><td>57.53&nbsp;%</td><td>45.35&nbsp;%</td><td>50.72&nbsp;%</td></tr>
-            <tr class="group-end"><td>Ablation: Only Time Series</td><td>49.80&nbsp;%</td><td>50.58&nbsp;%</td><td>51.79&nbsp;%</td><td>51.18&nbsp;%</td></tr>
-            <tr class="human-row group-end"><td>Humans (<em>n</em>&nbsp;=&nbsp;840)</td><td>77.50&nbsp;%</td><td>81.08&nbsp;%</td><td><strong>74.66&nbsp;%</strong></td><td>77.74&nbsp;%</td></tr>
-            <tr><td>Naive: TS + Question</td><td>48.49&nbsp;%</td><td>48.79&nbsp;%</td><td>28.00&nbsp;%</td><td>35.58&nbsp;%</td></tr>
+                <td>Ablation: Only Question (Q2)</td><td>64.53&nbsp;%</td><td>65.32&nbsp;%</td><td>64.70&nbsp;%</td><td>64.22&nbsp;%</td></tr>
+            <tr class="group-end"><td>Ablation: Only Time Series (Q3)</td><td>49.21&nbsp;%</td><td>50.15&nbsp;%</td><td>50.00&nbsp;%</td><td>33.62&nbsp;%</td></tr>
+            <tr class="human-row group-end"><td>Humans (<em>n</em>&nbsp;=&nbsp;840)</td><td>77.50&nbsp;%</td><td>81.08&nbsp;%</td><td>74.66&nbsp;%</td><td>77.74&nbsp;%</td></tr>
+            <tr><td>Naive: TS + Question</td><td>62.94&nbsp;%</td><td>64.54&nbsp;%</td><td>63.19&nbsp;%</td><td>62.16&nbsp;%</td></tr>
             <tr class="group-end"><td>ChatTS</td><td>51.69&nbsp;%</td><td>55.38&nbsp;%</td><td>25.36&nbsp;%</td><td>34.79&nbsp;%</td></tr>
             <tr><td>xQA-Llama on GT</td><td>79.44&nbsp;%</td><td>84.91&nbsp;%</td><td>72.42&nbsp;%</td><td>78.17&nbsp;%</td></tr>
             <tr><td>xQA-Qwen on GT</td><td>80.92&nbsp;%</td><td>92.28&nbsp;%</td><td>68.14&nbsp;%</td><td>78.39&nbsp;%</td></tr>
             <tr><td>xQA-Llama on AE</td><td>79.46&nbsp;%</td><td>84.60&nbsp;%</td><td>72.84&nbsp;%</td><td>78.28&nbsp;%</td></tr>
-            <tr class="split-end"><td>xQA-Qwen on AE</td><td><strong>81.00&nbsp;%</strong></td><td><strong>92.52&nbsp;%</strong></td><td>68.10&nbsp;%</td><td><strong>78.46&nbsp;%</strong></td></tr>
+            <tr class="split-end"><td>xQA-Qwen on AE</td><td>81.00&nbsp;%</td><td>92.52&nbsp;%</td><td>68.10&nbsp;%</td><td>78.46&nbsp;%</td></tr>
 
             <tr><th scope="rowgroup" rowspan="9" class="split-cell">Multi</th>
-                <td>Ablation: Only Question</td><td>64.47&nbsp;%</td><td>64.47&nbsp;%</td><td>64.47&nbsp;%</td><td>64.38&nbsp;%</td></tr>
-            <tr class="group-end"><td>Ablation: Only Time Series</td><td>0.28&nbsp;%</td><td>0.28&nbsp;%</td><td>0.28&nbsp;%</td><td>0.28&nbsp;%</td></tr>
+                <td>Ablation: Only Question (Q2)</td><td>33.32&nbsp;%</td><td>30.38&nbsp;%</td><td>33.00&nbsp;%</td><td>26.25&nbsp;%</td></tr>
+            <tr class="group-end"><td>Ablation: Only Time Series (Q3)</td><td>33.29&nbsp;%</td><td>21.94&nbsp;%</td><td>33.08&nbsp;%</td><td>20.39&nbsp;%</td></tr>
             <tr class="human-row group-end"><td>Humans (<em>n</em>&nbsp;=&nbsp;820)</td><td>86.59&nbsp;%</td><td>86.55&nbsp;%</td><td>86.61&nbsp;%</td><td>86.54&nbsp;%</td></tr>
-            <tr><td>Naive: TS + Question</td><td>9.69&nbsp;%</td><td>9.69&nbsp;%</td><td>9.69&nbsp;%</td><td>9.62&nbsp;%</td></tr>
+            <tr><td>Naive: TS + Question</td><td>34.01&nbsp;%</td><td>22.74&nbsp;%</td><td>33.68&nbsp;%</td><td>26.62&nbsp;%</td></tr>
             <tr class="group-end"><td>ChatTS</td><td>30.40&nbsp;%</td><td>30.13&nbsp;%</td><td>30.58&nbsp;%</td><td>29.12&nbsp;%</td></tr>
             <tr><td>xQA-Llama on GT</td><td>81.50&nbsp;%</td><td>81.64&nbsp;%</td><td>81.51&nbsp;%</td><td>81.50&nbsp;%</td></tr>
-            <tr><td>xQA-Qwen on GT</td><td><strong>88.01&nbsp;%</strong></td><td><strong>88.04&nbsp;%</strong></td><td><strong>88.03&nbsp;%</strong></td><td><strong>88.01&nbsp;%</strong></td></tr>
+            <tr><td>xQA-Qwen on GT</td><td>88.01&nbsp;%</td><td>88.04&nbsp;%</td><td>88.03&nbsp;%</td><td>88.01&nbsp;%</td></tr>
             <tr><td>xQA-Llama on AE</td><td>81.18&nbsp;%</td><td>81.30&nbsp;%</td><td>81.19&nbsp;%</td><td>81.18&nbsp;%</td></tr>
             <tr><td>xQA-Qwen on AE</td><td>87.97&nbsp;%</td><td>87.99&nbsp;%</td><td>87.98&nbsp;%</td><td>87.97&nbsp;%</td></tr>
           </tbody>
@@ -989,7 +998,8 @@
 
       <div class="table-wrapper">
         <table class="results-table">
-          <caption>Open-ended answers, scored by ROUGE, METEOR, and the validated LLM judge.</caption>
+          <caption>Open-ended test results on a 0&ndash;1 scale, not percentages. For Q2, Q3, and Naive,
+            ROUGE denotes stemmed ROUGE-L F1; LLMJudge is normalized to [0, 1].</caption>
           <thead>
             <tr>
               <th scope="col">System</th>
@@ -999,13 +1009,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>Ablation: Only Question</td><td><strong>0.2053</strong></td><td>0.2436</td><td>0.6021</td></tr>
-            <tr class="group-end"><td>Ablation: Only Time Series</td><td>0.0274</td><td>0.0154</td><td>0.0173</td></tr>
+            <tr><td>Ablation: Only Question (Q2)</td><td>0.4233</td><td>0.2838</td><td>0.2092</td></tr>
+            <tr class="group-end"><td>Ablation: Only Time Series (Q3)</td><td>0.0956</td><td>0.0491</td><td>0.1082</td></tr>
             <tr class="human-row group-end"><td>Humans (<em>n</em>&nbsp;=&nbsp;440)</td><td>0.0953</td><td>0.2635</td><td>0.6148</td></tr>
-            <tr><td>Naive: TS + Question</td><td>0.0603</td><td>0.0576</td><td>0.0460</td></tr>
+            <tr><td>Naive: TS + Question</td><td>0.8199</td><td>0.6947</td><td>0.8759</td></tr>
             <tr class="group-end"><td>ChatTS</td><td>0.0455</td><td>0.1060</td><td>0.0702</td></tr>
             <tr><td>xQA-Llama on GT</td><td>0.0913</td><td>0.3677</td><td>0.7729</td></tr>
-            <tr><td>xQA-Qwen on GT</td><td>0.1789</td><td><strong>0.3697</strong></td><td><strong>0.8279</strong></td></tr>
+            <tr><td>xQA-Qwen on GT</td><td>0.1789</td><td>0.3697</td><td>0.8279</td></tr>
             <tr><td>xQA-Llama on AE</td><td>0.0898</td><td>0.3679</td><td>0.7753</td></tr>
             <tr><td>xQA-Qwen on AE</td><td>0.1782</td><td>0.3692</td><td>0.8176</td></tr>
           </tbody>
@@ -1014,13 +1024,68 @@
 
       <div class="content section-lead">
         <p>
-          <strong>What this means.</strong> xQA separates perception from reasoning: an xLSTM-Mixer action encoder
-          (AE) labels each segment, and an untrained instruction-following LLM reasons over the resulting action
-          sequence. That it matches the ground-truth-label (GT) variant shows the segmentation is learnable &mdash; but
-          both rely on privileged action information that is not available when solving QuAnTS proper. The step forward
-          is therefore models that recognize the actions in the raw signal themselves.
+          Human, ChatTS, and xQA rows provide reference scores under their respective evaluation setups;
+          direct rankings require compatible scoring and evaluation conditions.
+        </p>
+        <p>
+          <strong>What this means.</strong> Question-only binary performance reveals predictive information in the
+          textual inputs, so the ablations do not rule out shortcuts. Naive's strong open-answer scores show that a
+          finetuned LLM on serialized trajectories can answer this format well, but do not establish general motion
+          understanding or transfer. xQA separates perception from reasoning: an xLSTM-Mixer action encoder (AE)
+          labels each segment, and an instruction-following LLM reasons over the resulting action sequence.
+          Its AE and ground-truth-label (GT) variants achieve similar scores, supporting the feasibility of learning
+          action recognition under the available supervision.
         </p>
       </div>
+
+      <details>
+        <summary><strong>General-text retention after finetuning (perplexity)</strong></summary>
+        <div class="content section-lead">
+          <p>
+            We evaluate the base model and all nine final adapters on the same WikiText-2 raw test stream,
+            without a task prompt or chat template: 289,075 scored tokens, a 2,048-token context, and a 1,024-token
+            stride. BF16 is the primary comparison; NF4 uses BF16 computation. Perplexity (PPL) is the exponential
+            of token-weighted mean negative log-likelihood. Lower is better, and PPL/base compares each adapter
+            with the base at the same precision.
+          </p>
+        </div>
+        <div class="table-wrapper">
+          <table class="results-table">
+            <caption>WikiText-2 test perplexity. PPL/base is a multiplicative ratio, not a percentage.</caption>
+            <thead>
+              <tr>
+                <th scope="col">System</th>
+                <th scope="col">Answer format</th>
+                <th scope="col">BF16 PPL&nbsp;&darr;</th>
+                <th scope="col">BF16 PPL/base</th>
+                <th scope="col">NF4 PPL&nbsp;&darr;</th>
+                <th scope="col">NF4 PPL/base</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="group-end"><td>Base</td><td>&mdash;</td><td>5.61</td><td>1.00</td><td>5.97</td><td>1.00</td></tr>
+              <tr><td>Only Question (Q2)</td><td>Binary</td><td>3.17&nbsp;&times;&nbsp;10<sup>8</sup></td><td>5.65&nbsp;&times;&nbsp;10<sup>7</sup></td><td>3.71&nbsp;&times;&nbsp;10<sup>8</sup></td><td>6.21&nbsp;&times;&nbsp;10<sup>7</sup></td></tr>
+              <tr><td>Only Question (Q2)</td><td>Multi</td><td>9870.98</td><td>1758.13</td><td>6.46&nbsp;&times;&nbsp;10<sup>4</sup></td><td>1.08&nbsp;&times;&nbsp;10<sup>4</sup></td></tr>
+              <tr class="group-end"><td>Only Question (Q2)</td><td>Open</td><td>19.24</td><td>3.43</td><td>25.65</td><td>4.30</td></tr>
+              <tr><td>Only Time Series (Q3)</td><td>Binary</td><td>2.10&nbsp;&times;&nbsp;10<sup>7</sup></td><td>3.74&nbsp;&times;&nbsp;10<sup>6</sup></td><td>1.74&nbsp;&times;&nbsp;10<sup>7</sup></td><td>2.92&nbsp;&times;&nbsp;10<sup>6</sup></td></tr>
+              <tr><td>Only Time Series (Q3)</td><td>Multi</td><td>6.17&nbsp;&times;&nbsp;10<sup>8</sup></td><td>1.10&nbsp;&times;&nbsp;10<sup>8</sup></td><td>7.32&nbsp;&times;&nbsp;10<sup>8</sup></td><td>1.23&nbsp;&times;&nbsp;10<sup>8</sup></td></tr>
+              <tr class="group-end"><td>Only Time Series (Q3)</td><td>Open</td><td>10.39</td><td>1.85</td><td>12.60</td><td>2.11</td></tr>
+              <tr><td>Naive: TS + Question</td><td>Binary</td><td>1.14&nbsp;&times;&nbsp;10<sup>8</sup></td><td>2.03&nbsp;&times;&nbsp;10<sup>7</sup></td><td>1.48&nbsp;&times;&nbsp;10<sup>8</sup></td><td>2.48&nbsp;&times;&nbsp;10<sup>7</sup></td></tr>
+              <tr><td>Naive: TS + Question</td><td>Multi</td><td>1.35&nbsp;&times;&nbsp;10<sup>7</sup></td><td>2.40&nbsp;&times;&nbsp;10<sup>6</sup></td><td>2.90&nbsp;&times;&nbsp;10<sup>7</sup></td><td>4.86&nbsp;&times;&nbsp;10<sup>6</sup></td></tr>
+              <tr><td>Naive: TS + Question</td><td>Open</td><td>10.61</td><td>1.89</td><td>12.99</td><td>2.18</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="content section-lead">
+          <p>
+            All active adapters increase general-text perplexity relative to their precision-matched base.
+            Naive's strong open-answer performance coexists with a 1.89-fold BF16 perplexity increase;
+            the closed-answer adapters show much larger increases. These are diagnostics of poorer next-token
+            prediction on one general-text corpus, not QuAnTS answer accuracy or a comprehensive assessment
+            of reasoning and conversational ability. The base weights remain frozen.
+          </p>
+        </div>
+      </details>
     </div>
   </section>
   <!-- End results -->
