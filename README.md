@@ -1,5 +1,6 @@
 # QuAnTS: Question Answering on Time Series – Dataset Generation
 
+[![DMLR 2026](https://img.shields.io/badge/DMLR-2026-8c1515.svg)](https://openreview.net/forum?id=bNCDElSOXB)
 [![arXiv](https://img.shields.io/badge/arXiv-2511.05124-b31b1b.svg?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2511.05124)
 [![Project Website](https://img.shields.io/badge/Project-Website-1f4e79.svg)](https://mauricekraus.github.io/quants-generate/)
 [![Dataset on Hugging Face](https://img.shields.io/badge/Hugging%20Face-Dataset-ffd21e.svg?logo=huggingface)](https://huggingface.co/datasets/dasyd/quants)
@@ -10,7 +11,7 @@ This repository holds the code for generating the multimodal QuAnTS dataset, com
 The purpose of the generated dataset is to lay the groundwork for a system that can answer questions based on time series data by examining how to produce a synthetic text and time series dataset that corresponds to real-world activities.
 Question and answer pairs are generated automatically from predefined question categories.
 
-Further information regarding the question categories can be found in [the corresponding paper](https://arxiv.org/abs/2511.05124).
+Further information regarding the question categories can be found in [the corresponding paper](https://openreview.net/forum?id=bNCDElSOXB).
 
 <img src="docs/static/images/chat.png" alt="Example chat motivating time series question answering: Q: 'What is the person doing first?', A: 'They are waving.', Q: 'How many times are they jumping after that?', A: '...'" width="40%"/>
 
@@ -21,6 +22,7 @@ Further information regarding the question categories can be found in [the corre
 Use git to clone this repository:
 ```shell
 git clone https://github.com/mauricekraus/quants-generate.git
+cd quants-generate
 ```
 
 The codebase is written in Python.
@@ -31,13 +33,16 @@ The dataset generation commands assume you are in the `quants/` folder.
 ```shell
 apt install ffmpeg
 pip install -e quants[dev]
+cd quants
 ```
 
-This repository also provides a Docker image and a [devcontainer](https://containers.dev/) for easy experimentation.
+This suffices for the prompt generation (`prompts`) and `transcode-animations`.
+The motion diffusion and rendering (`generate-motion-stmc` and `render-stmc`) additionally need the pinned STMC dependencies, which the provided Docker image and [devcontainer](https://containers.dev/) install.
+They also need the SMPL-H body model (`stmc/deps`), the AMASS motions (`stmc/datasets`), and the pretrained model (`stmc/pretrained_models`); see the [STMC README](stmc/README.md) on how to obtain them and `.devcontainer/devcontainer.json` for how they are mounted.
 
 ### Overview
 
-![QuAnTS is generated in several steps: An action sequence is sampled ➀, where for each we sample five question and answer types ➁. For diversity, each of them is then instantiated from a sampled template ➂. The time series from the human motion diffusion ➃ is then combined with the QA-pair and auxiliary data ➄. Example QA pairs are shown below. Dice indicate randomized operations for dataset diversity.](docs/static/images/overview.png "Dataset generation overview")
+![QuAnTS is generated in several steps: An action sequence is sampled ➀, where for each we sample five question and answer types ➁. For diversity, each of them is then instantiated from a sampled template ➂. The time series from the human motion diffusion ➃ is then combined with the QA-pair and auxiliary data ➄. Example QA pairs are shown below. Dice indicate randomized operations to enhance dataset diversity.](docs/static/images/overview.png "Dataset generation overview")
 
 
 Run `python -m generate --help` to get an overview of the available commands:
@@ -53,7 +58,7 @@ Run `python -m generate --help` to get an overview of the available commands:
 
 ### Running the prompt generation
 
-To execute the code, run `python -m generate prompts --num-samples 1000`. This will generate a new folder (by default `generated_dataset/`) containing JSON files containing a prompt sequence and the matching question and answer pairs. The program will print the first few instances as tables to the console.
+To execute the code, run `python -m generate prompts --num-samples 1000`. This will generate a new folder (by default `generated-dataset/`) containing JSON files containing a prompt sequence and the matching question and answer pairs. The program will print the first few instances as tables to the console.
 
 To adjust the parameters of the generation process, run the same code with `--help`.
 
@@ -70,21 +75,24 @@ Furthermore, duplicates are filtered out.
 
 #### Obtaining a simplified dataset variant
 
-Set the `question_type_distribution` to `[1, 0, 0, 0, 0, 0, 1, 0, 0, 0]` (e.g., for only generating `AfterQuestion` and `ActionCountQuestion`).
-Then run `python -m generate prompts --answer-types binary --num-samples 500`
+Set the `--question-type-distribution` to `[1, 0, 0, 0, 0, 0, 1, 0, 0, 0]` (e.g., for only generating `AfterQuestion` and `ActionCountQuestion`) by repeating the option once per value:
+
+```shell
+python -m generate prompts --answer-types binary --num-samples 500 --output-dir simplified-dataset \
+    $(for p in 1 0 0 0 0 0 1 0 0 0; do echo --question-type-distribution $p; done)
+```
 
 ### Running the motion diffusion
 
-Please use `python -m generate render-stmc --help` to see the available options.
+Please use `python -m generate generate-motion-stmc --help` to see the available options.
 
 Motion diffusion was previously implemented using [PriorMDM](https://github.com/priorMDM/priorMDM) before switching to STMC; that legacy support has since been removed.
 
 ### Visualizing the dataset
 
-To instance of the dataset, run `python -m generate render-stmc --help` to see the available options.
-By default, it loads the data from HuggingFace. Log in with `hf auth login` or provide a token as an environment variable or argument.
-Alternatively, you can generate from a local folder by providing `--input-path my-own-quants-dataset/data`.
-To run it for multiple at once, run something like `for i in {0..10}; do python -m generate render --idx $i --no-ask-for-token; done`.
+To render instances of the dataset, run `python -m generate render-stmc --help` to see the available options.
+It animates the trajectories in a local dataset folder, as produced by `prompts` and `generate-motion-stmc`, given via `--dataset-path generated-dataset/data`.
+To render a single instance, add `--only-data-id 42`; to render several, list their IDs in a file (one per line) and add `--only-ids-from ids.txt`.
 
 ### Analyzing the dataset
 
@@ -114,7 +122,7 @@ You should commit/backup your files before running the following commands.
 
 ## Possible future improvements
 
-- LLMs could be used to generate prompts with more variety or for rephrasing existing ones.
+- LLMs could be used to generate the prompts themselves, going beyond the LLM-assisted paraphrasing of the templates.
 - The consistency of the generated prompts could be improved by using a common tense (present or past). However, as long as each prompt is consistent, the generated dataset should be fine and may benefit from the diversity. That is the current approach.
   However, questions and answers are generated separately, so there is currently no guarantee that the tense is consistent between them.
 - Allow for multiple answers per question. This would be useful for questions like `"What is an activity following some time after the activity X?"` (`after_open`).

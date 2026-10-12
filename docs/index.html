@@ -35,8 +35,9 @@
   <meta name="citation_author" content="Salim, Flora D.">
   <meta name="citation_author" content="Kersting, Kristian">
   <meta name="citation_author" content="Dhami, Devendra Singh">
-  <meta name="citation_publication_date" content="2025">
-  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2511.05124">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_journal_title" content="Journal of Data-centric Machine Learning Research">
+  <meta name="citation_pdf_url" content="https://openreview.net/pdf?id=bNCDElSOXB">
   <meta name="citation_arxiv_id" content="2511.05124">
 
   <!-- Additional SEO -->
@@ -92,13 +93,13 @@
       {"@type": "Person", "name": "Kristian Kersting", "affiliation": {"@type": "Organization", "name": "TU Darmstadt"}},
       {"@type": "Person", "name": "Devendra Singh Dhami", "affiliation": {"@type": "Organization", "name": "TU Eindhoven"}}
     ],
-    "datePublished": "2025-11",
+    "datePublished": "2026-10",
     "url": "https://mauricekraus.github.io/quants-generate/",
-    "sameAs": "https://arxiv.org/abs/2511.05124",
+    "sameAs": ["https://openreview.net/forum?id=bNCDElSOXB", "https://arxiv.org/abs/2511.05124"],
     "image": "https://raw.githubusercontent.com/mauricekraus/quants-generate/main/docs/static/images/overview.png",
     "keywords": ["Time Series", "Multimodal Question Answering", "Dataset", "Human Motion"],
-    "abstract": "Text offers intuitive access to information. This can, in particular, complement the density of numerical time series, thereby allowing improved interactions with time series models to enhance accessibility and decision-making. While the creation of question-answering datasets and models has recently seen remarkable growth, most research focuses on question answering (QA) on vision and text, with time series receiving minute attention. To bridge this gap, we propose a challenging novel time series QA (TSQA) dataset, QuAnTS, for Question Answering on Time Series data. Specifically, we pose a wide variety of questions and answers about human motion in the form of tracked skeleton trajectories. We verify that the large-scale QuAnTS dataset is well-formed and comprehensive through extensive experiments. Thoroughly evaluating existing and newly proposed baselines then lays the groundwork for a deeper exploration of TSQA using QuAnTS. Additionally, we provide human performances as a key reference for gauging the practical usability of such models. We hope to encourage future research on interacting with time series models through text, enabling better decision-making and more transparent systems.",
-    "citation": "@article{divo2025quants, title={QuAnTS: Question Answering on Time Series}, author={Divo, Felix and Kraus, Maurice and Nguyen, Anh Q. and Xue, Hao and Razzak, Imran and Salim, Flora D. and Kersting, Kristian and Dhami, Devendra Singh}, journal={arXiv preprint arXiv:2511.05124}, year={2025}}",
+    "abstract": "Text offers intuitive access to information. This can, in particular, complement the density of numerical time series, thereby enabling improved interactions with time series models to enhance accessibility and decision-making. While the creation of question-answering datasets and models has recently seen remarkable growth, most research focuses on question answering (QA) on vision and text, with time series receiving minute attention. To bridge this gap, we propose a challenging novel time series QA (TSQA) dataset, QuAnTS, for Question Answering on Time Series data. Specifically, we pose a wide variety of questions and answers about human motion in the form of tracked skeleton trajectories. We verify that the large-scale QuAnTS dataset is well-formed and comprehensive through extensive experiments. Thoroughly evaluating existing and newly proposed baselines then lays the groundwork for a deeper exploration of TSQA using QuAnTS. Additionally, we provide human performances as a key reference for gauging the practical usability of such models. We hope to encourage future research on interacting with time series models through text, enabling better decision-making and more transparent systems.",
+    "citation": "@article{divo2026quants, title={QuAnTS: Question Answering on Time Series}, author={Divo, Felix and Kraus, Maurice and Nguyen, Anh Q. and Xue, Hao and Razzak, Imran and Salim, Flora D. and Kersting, Kristian and Dhami, Devendra Singh}, journal={Journal of Data-centric Machine Learning Research}, year={2026}, url={https://openreview.net/forum?id=bNCDElSOXB}}",
     "isAccessibleForFree": true,
     "mainEntity": {
       "@type": "Dataset",
@@ -212,7 +213,7 @@
             </div>
             <div class="publication-affiliations">
               <span class="author-block">
-                <sup>1</sup>AI &amp; ML Lab, TU Darmstadt
+                <sup>1</sup>AIML Lab, TU Darmstadt
                 <br><sup>2</sup>University of New South Wales
                 <br><sup>3</sup>Hong Kong University of Science and Technology (Guangzhou)
                 <br><sup>4</sup>MBZUAI, Abu Dhabi
@@ -224,12 +225,22 @@
             </div>
             <div class="eql-cntrb"><sup>*</sup>Authors contributed equally</div>
             <div class="publication-venue">
-              Under Review at the
+              Published in the
               <a href="https://data.mlr.press/" target="_blank">Journal of Data-centric Machine Learning Research (DMLR)</a>
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://openreview.net/forum?id=bNCDElSOXB" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-open-access"></i>
+                    </span>
+                    <span>OpenReview</span>
+                  </a>
+                </span>
+
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/2511.05124" target="_blank"
                      class="external-link button is-normal is-rounded is-dark">
@@ -283,11 +294,11 @@
       <div class="hero-body">
         <img src="static/images/overview.png" alt="QuAnTS generation pipeline: an action sequence is sampled, question and answer types are drawn per sequence, each is instantiated from a template, and the human motion diffusion output is combined with the QA pair" loading="eager"/>
         <h2 class="subtitle has-text-centered">
-          <strong>QuAnTS is generated in five steps:</strong>
-          An action sequence is sampled &#9312;, and for each we sample five question and answer types &#9313;.
+          <strong>QuAnTS is generated in several steps:</strong>
+          An action sequence is sampled &#9312;, where for each we sample five question and answer types &#9313;.
           For diversity, each of them is then instantiated from a sampled template &#9314;.
-          The time series from the human motion diffusion &#9315; is finally combined with the QA pair and auxiliary data &#9316;.
-          Dice indicate randomized operations for dataset diversity.
+          The time series from the human motion diffusion &#9315; is then combined with the QA-pair and auxiliary data &#9316;.
+          Dice indicate randomized operations to enhance dataset diversity.
         </h2>
       </div>
     </div>
@@ -303,7 +314,7 @@
           <div class="content has-text-justified">
             <p>
               Text offers intuitive access to information.
-              This can, in particular, complement the density of numerical time series, thereby allowing improved interactions with time series models to enhance accessibility and decision-making.
+              This can, in particular, complement the density of numerical time series, thereby enabling improved interactions with time series models to enhance accessibility and decision-making.
               While the creation of question-answering datasets and models has recently seen remarkable growth, most research focuses on question answering&nbsp;(QA) on vision and text, with time series receiving minute attention.
               To bridge this gap, we propose a challenging novel time series QA&nbsp;(TSQA) dataset, QuAnTS, for <strong>Qu</strong>estion <strong>An</strong>swering on <strong>T</strong>ime <strong>S</strong>eries data.
               Specifically, we pose a wide variety of questions and answers about human motion in the form of tracked skeleton trajectories.
@@ -325,7 +336,7 @@
       <h2 class="title is-3 has-text-centered">Explore the Data</h2>
       <div class="content has-text-centered section-lead">
         <p>
-          Every QuAnTS sample is a 16-second human motion trajectory of four consecutive actions, paired with five
+          Every QuAnTS context is a 16-second human motion trajectory of four consecutive actions, paired with five
           question&ndash;answer pairs. Models see the raw <strong>320 &times; 24 &times; 3</strong> numbers; the videos below are
           renderings of exactly that signal, as shown to the participants of our human study.
           Pick a sample from the test split:
@@ -853,7 +864,7 @@
 
       <div class="two-column-figure">
         <div class="figure-column">
-          <img src="static/images/question_distribution.png" alt="Bar chart of the number of samples per question type, grouped by binary, multiple-choice, and open answer types, all close to 3,000-3,700 samples" loading="lazy"/>
+          <img src="static/images/question_distribution.png" alt="Bar chart of the number of samples per question type, grouped by binary, multiple-choice, and open answer types, mostly similar in size, with a few rarer categories" loading="lazy"/>
         </div>
         <div class="text-column content">
           <h3 class="title is-5">A balanced mix, by construction</h3>
@@ -863,7 +874,7 @@
             only be posed when the action sequence permits a non-trivial answer.
           </p>
           <p>
-            Diversity is enforced on every axis: 10&ndash;20 hand-reviewed templates per question type, LLM-assisted
+            Diversity is enforced on every axis: about 10&ndash;20 hand-reviewed templates per QA type, LLM-assisted
             paraphrasing, randomized answer positions, and organic variation from the motion diffusion. Not a single
             trajectory is duplicated, and under a soft equality on the signal level the effective sample size stays
             above 99&nbsp;%.
@@ -927,7 +938,7 @@
         <img src="static/images/chat.png" alt="Example chat: a user asks what the person is doing first, the assistant answers that they are waving, and the conversation continues about how often they jump" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
           <strong>Where this is going.</strong>
-          Text offers a highly intuitive medium to interact with otherwise opaque multivariate time series.
+          Text offers a highly intuitive medium of communication to interact with otherwise opaque multivariate time series.
         </h2>
       </div>
     </div>
@@ -1099,14 +1110,17 @@
           <p>Load the published dataset straight from the Hugging Face Hub:</p>
           <pre><code>from datasets import load_dataset
 
-quants = load_dataset("dasyd/quants")
-print(quants["test"][0]["question"])</code></pre>
+quants = load_dataset("dasyd/quants", "binary")  # or "multi", "open"
+print(quants["test"][0]["question"])
+# Is it accurate to state that the individual repeats waving 0 times?</code></pre>
           <p>
             Or generate your own variant &mdash; the pipeline is configurable in the number of samples, the question
             type distribution, and the answer formats:
           </p>
           <pre><code>git clone https://github.com/mauricekraus/quants-generate.git
+cd quants-generate
 pip install -e quants[dev]
+cd quants
 python -m generate prompts --num-samples 1000</code></pre>
         </div>
       </div>
@@ -1124,11 +1138,12 @@ python -m generate prompts --num-samples 1000</code></pre>
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{divo2025quants,
+      <pre id="bibtex-code"><code>@article{divo2026quants,
   title={QuAnTS: Question Answering on Time Series},
   author={Divo, Felix and Kraus, Maurice and Nguyen, Anh Q. and Xue, Hao and Razzak, Imran and Salim, Flora D. and Kersting, Kristian and Dhami, Devendra Singh},
-  journal={arXiv preprint arXiv:2511.05124},
-  year={2025}
+  journal={Journal of Data-centric Machine Learning Research},
+  year={2026},
+  url={https://openreview.net/forum?id=bNCDElSOXB}
 }</code></pre>
     </div>
   </section>

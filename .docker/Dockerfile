@@ -29,6 +29,11 @@ RUN pip install "setuptools<81" wheel && \
     "clip @ git+https://github.com/openai/CLIP.git@a1d071733d7111c9c014f024669f959182114e33" \
     "chumpy @ git+https://github.com/mauricekraus/chumpy.git"
 
+# Keep later installs (e.g., `pip install -e quants[dev]`) from upgrading the pinned STMC stack.
+# typer is exempt since quants needs a newer version than STMC pins.
+RUN pip freeze --all | grep -v -i -E "^typer==| @ " > /etc/pip-constraints.txt
+ENV PIP_CONSTRAINT=/etc/pip-constraints.txt
+
 ENV PYTHONPATH=$PYTHONPATH:src
 
 ENV HF_HOME=/workspaces/$PROJECT_NAME/.cache/huggingface
